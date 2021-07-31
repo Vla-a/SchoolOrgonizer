@@ -32,7 +32,7 @@ class NoteAdapter(
             bindingView.tvText.text = item.message
             bindingView.tvDate.text = item.date
 
-            itemView.setOnLongClickListener {
+            bindingView.ivRemove.setOnClickListener {
                 clickListener(item)
                 true
             }

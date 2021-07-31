@@ -3,6 +3,7 @@ package com.example.schoolorgonizer.alarmсlock
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,9 +17,9 @@ import com.example.schoolorgonizer.databinding.FragmentAlarmClockBinding
 import org.koin.android.ext.android.inject
 import java.util.*
 
-class AlarmClockFragment :Fragment() {
+class AlarmClockFragment : Fragment() {
 
-    private  var binding: FragmentAlarmClockBinding? = null
+    private var binding: FragmentAlarmClockBinding? = null
     private var alarmDate: Calendar = Calendar.getInstance().apply { time = Date() }
     private val alarmManager: AlarmManager by inject()
 
@@ -48,7 +49,8 @@ class AlarmClockFragment :Fragment() {
         }
 
         binding?.btnSt?.setOnClickListener {
-            with(binding?.calendarView) {
+
+                        with(binding?.calendarView) {
                 this?.year?.let { it1 -> alarmDate.set(Calendar.YEAR, it1) }
                 this?.month?.let { it1 -> alarmDate.set(Calendar.MONTH, it1) }
                 this?.dayOfMonth?.let { it1 -> alarmDate.set(Calendar.DAY_OF_MONTH, it1) }
@@ -67,9 +69,19 @@ class AlarmClockFragment :Fragment() {
                     PendingIntent.FLAG_UPDATE_CURRENT
                 )
             )
-//            Toast.makeText(this, getString(R.string.add_new_alarm).toInt(), Toast.LENGTH_SHORT).show()
-
+            Toast.makeText(
+                context,
+                "${getString(R.string.add_new_alarm).toString()} на ${binding?.timePicker?.hour}:${binding?.timePicker?.minute}",
+                Toast.LENGTH_SHORT
+            ).show()
+            binding?.tvTex?.text =
+                "${getString(R.string.add_new_alarm).toString()} на ${binding?.timePicker?.hour}:${binding?.timePicker?.minute}"
         }
+
+binding?.btnStop?.setOnClickListener {
+
+}
+
 
     }
 

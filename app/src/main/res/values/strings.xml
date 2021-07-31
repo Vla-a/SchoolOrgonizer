@@ -8,12 +8,12 @@
     <string name="school_of_the_map">Школа на карте</string>
     //lesson
     <string name="lesson1">1-й урок: с 08:30 до 09:15 </string>
-    <string name="lesson2">1-й урок: с 09:25 до 10:10 </string>
-    <string name="lesson3">1-й урок: с 10:20 до 11:05 </string>
-    <string name="lesson4">1-й урок: с 11:40 до 12:25 </string>
-    <string name="lesson5">1-й урок: с 12:35 до 13:20 </string>
-    <string name="lesson6">1-й урок: с 13:30 до 14:15 </string>
-    <string name="lesson7">1-й урок: с 14:25 до 15:10 </string>
+    <string name="lesson2">2-й урок: с 09:25 до 10:10 </string>
+    <string name="lesson3">3-й урок: с 10:20 до 11:05 </string>
+    <string name="lesson4">4-й урок: с 11:40 до 12:25 </string>
+    <string name="lesson5">5-й урок: с 12:35 до 13:20 </string>
+    <string name="lesson6">6-й урок: с 13:30 до 14:15 </string>
+    <string name="lesson7">7-й урок: с 14:25 до 15:10 </string>
     //alarm
     <string name="START">СТАРТ</string>
     <string name="STOP">СТОП</string>
