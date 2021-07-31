@@ -14,6 +14,7 @@
     <string name="lesson5">5-й урок: с 12:35 до 13:20 </string>
     <string name="lesson6">6-й урок: с 13:30 до 14:15 </string>
     <string name="lesson7">7-й урок: с 14:25 до 15:10 </string>
+    <string name="lesson">Расписание звонков: </string>
     //alarm
     <string name="START">СТАРТ</string>
     <string name="STOP">СТОП</string>
