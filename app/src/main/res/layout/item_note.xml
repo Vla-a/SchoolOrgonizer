@@ -8,8 +8,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="380dp"
+        android:layout_height="100dp"
         android:layout_margin="8dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="17dp"
@@ -54,37 +54,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="23.03.2021" />
 
-            <ImageView
-                android:id="@+id/ivCloud"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:visibility="invisible"
-                tools:visibility="visible"
-                android:layout_marginEnd="8dp"
-                android:alpha=".7"
-                android:src="@drawable/ic_cloud"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_date"
-                app:layout_constraintEnd_toStartOf="@+id/tv_date"
-                app:layout_constraintTop_toTopOf="@+id/tv_date"
-                app:tint="@color/purple_700" />
-
-            <ImageView
-                android:id="@+id/ivAlarm"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginEnd="4dp"
-                android:padding="2dp"
-                android:alpha=".7"
-                android:src="@drawable/ic_alarm"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_date"
-                app:layout_constraintEnd_toStartOf="@+id/ivCloud"
-                app:layout_constraintTop_toTopOf="@+id/tv_date"
-                app:tint="@color/purple_700"
-                tools:visibility="visible" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </com.google.android.material.card.MaterialCardView>
 

@@ -28,17 +28,30 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="City!" />
 
-        <TextView
-            android:id="@+id/tv_temp"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:textSize="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="temp" />
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="temp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img"
+                android:layout_marginStart= "160dp"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_cloud"
@@ -54,52 +67,51 @@
 
     <Button
         android:id="@+id/btn_call_schedule"
-        style="@style/Base.CardView"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/call_schedule"
         android:layout_margin="16dp"
+        android:text="@string/call_schedule"
         app:backgroundTint="@color/my_collor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_lesson_schedule"
-        style="@style/Base.CardView"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/lesson_schedule"
         app:backgroundTint="@color/my_collor"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_alarm_clock" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_notes"
-        style="@style/Base.CardView"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/notes"
         android:layout_margin="16dp"
+        android:text="@string/notes"
         app:backgroundTint="@color/my_collor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_call_schedule" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_alarm_clock"
-        style="@style/Base.CardView"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/alarm_clock"
         app:backgroundTint="@color/my_collor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_lesson_schedule" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_news"
-        style="@style/Base.CardView"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -111,14 +123,15 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_map"
-        style="@style/Base.CardView"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/school_of_the_map"
+
         app:backgroundTint="@color/my_collor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_alarm_clock" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_lesson_schedule" />
 
 
     <androidx.fragment.app.FragmentContainerView
@@ -126,11 +139,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

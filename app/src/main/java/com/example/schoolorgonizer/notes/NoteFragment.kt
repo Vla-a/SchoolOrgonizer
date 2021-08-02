@@ -5,6 +5,7 @@ import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -36,9 +37,18 @@ class NoteFragment : Fragment() {
         val noteAdapter = NoteAdapter {
             clickListener(it) }
 
-
+binding.btnGreta.setOnClickListener {
+    binding.editTextNote.visibility = View.VISIBLE
+    binding.btnNote.visibility = View.VISIBLE
+    binding.btnGreta.visibility = View.INVISIBLE
+}
 
         binding?.btnNote?.setOnClickListener {
+
+            binding.btnGreta.visibility = View.VISIBLE
+            binding.editTextNote.visibility = View.INVISIBLE
+            binding.btnNote.visibility = View.INVISIBLE
+
             with(binding.editTextNote) {
                 viewModels.addMessageToDatabase(text.toString())
                 setText("")

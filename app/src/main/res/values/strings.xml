@@ -16,9 +16,12 @@
     <string name="lesson7">7-й урок: с 14:25 до 15:10 </string>
     <string name="lesson">Расписание звонков: </string>
     //alarm
-    <string name="START">СТАРТ</string>
+    <string name="START">запустить будильник</string>
     <string name="STOP">СТОП</string>
     <string name="alarm">БУДИЛЬНИК</string>
     <string name="add_new_alarm">"Будильник создан"</string>
+    <string name="Set_the_date">"Установить дату"</string>
+    <string name="Set_the_time">"Установить время"</string>
+    <string name="add_new_note">"Создать заметку"</string>
 
 </resources>

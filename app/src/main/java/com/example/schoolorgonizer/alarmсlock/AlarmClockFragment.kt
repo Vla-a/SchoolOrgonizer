@@ -38,10 +38,16 @@ class AlarmClockFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+binding!!.btnDate.setOnClickListener {
+    binding!!.calendarView.visibility = View.VISIBLE
+    binding!!.timePicker.visibility = View.INVISIBLE
+}
+        binding!!.btnTime.setOnClickListener {
+            binding!!.calendarView.visibility = View.INVISIBLE
+            binding!!.timePicker.visibility = View.VISIBLE
+        }
 
         binding?.timePicker?.setIs24HourView(true)
-
         binding?.timePicker?.setOnTimeChangedListener { view, hourOfDay, minute ->
             alarmDate.set(Calendar.HOUR_OF_DAY, hourOfDay)
             alarmDate.set(Calendar.MINUTE, minute)
@@ -49,6 +55,9 @@ class AlarmClockFragment : Fragment() {
         }
 
         binding?.btnSt?.setOnClickListener {
+
+            binding!!.calendarView.visibility = View.INVISIBLE
+            binding!!.timePicker.visibility = View.INVISIBLE
 
                         with(binding?.calendarView) {
                 this?.year?.let { it1 -> alarmDate.set(Calendar.YEAR, it1) }

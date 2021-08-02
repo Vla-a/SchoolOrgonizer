@@ -26,9 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".notes.HomeWork15Activity"/>
-        <receiver android:name=".alarmсlock.NotificationBroadcast"
-         />
+
+        <receiver android:name=".alarmсlock.NotificationBroadcast"/>
+        <service android:name=".alarmсlock.AlarmService" />
+
 
     </application>
 
