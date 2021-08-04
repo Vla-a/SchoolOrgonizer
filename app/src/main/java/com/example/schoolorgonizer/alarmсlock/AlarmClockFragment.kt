@@ -56,13 +56,16 @@ class AlarmClockFragment : Fragment(), KoinComponent {
 
             when {
                 binding!!.chip1.isChecked -> {
-                    binding?.tvTex?.text = "treak1"
+                    binding?.tvTex?.text = AlarmService.TREK1
                 }
                 binding!!.chip2.isChecked -> {
-                    binding?.tvTex?.text = "treak2"
+                    binding?.tvTex?.text = AlarmService.TREK2
                 }
                 binding!!.chip3.isChecked -> {
-                    binding?.tvTex?.text = "treak3"
+                    binding?.tvTex?.text = AlarmService.TREK3
+                }
+                binding!!.chip4.isChecked -> {
+                    binding?.tvTex?.text = AlarmService.TREK4
                 }
             }
         }
@@ -128,8 +131,6 @@ class AlarmClockFragment : Fragment(), KoinComponent {
     fun startAlarmService() {
 
         val myAnotherService = Intent(context, AlarmService::class.java).apply {
-            putExtra("TIME", binding?.timePicker?.hour)
-            putExtra("MINUTE", binding?.timePicker?.minute)
             putExtra("TREK", binding?.tvTex?.text)
         }
         val pendingIntent = PendingIntent.getService(

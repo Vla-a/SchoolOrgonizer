@@ -25,5 +25,9 @@
     <string name="add_new_note">"Создать заметку"</string>
     <string name="singl">"Выбрать мелодию"</string>
     <string name="rington">"Выбор мелодии"</string>
+    <string name="trek1">"trek1"</string>
+    <string name="trek2">"trek2"</string>
+    <string name="trek3">"trek3"</string>
+    <string name="trek4">"trek4"</string>
 
 </resources>

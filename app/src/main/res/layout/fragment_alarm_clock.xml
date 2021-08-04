@@ -116,19 +116,25 @@ android:layout_margin="8dp"
                 android:id="@+id/chip1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="string/answer1" />
+                android:text="@string/trek1" />
 
             <RadioButton
                 android:id="@+id/chip2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="string/answer2" />
+                android:text="@string/trek2" />
 
             <RadioButton
                 android:id="@+id/chip3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="string/answer3" />
+                android:text="@string/trek3" />
+
+            <RadioButton
+                android:id="@+id/chip4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/trek4" />
 
             <Button
                 android:id="@+id/btn_ok"
