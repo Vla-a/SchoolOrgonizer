@@ -23,5 +23,7 @@
     <string name="Set_the_date">"Установить дату"</string>
     <string name="Set_the_time">"Установить время"</string>
     <string name="add_new_note">"Создать заметку"</string>
+    <string name="singl">"Выбрать мелодию"</string>
+    <string name="rington">"Выбор мелодии"</string>
 
 </resources>

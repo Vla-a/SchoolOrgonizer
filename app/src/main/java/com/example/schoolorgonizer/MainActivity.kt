@@ -4,6 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment.findNavController
+
+
 import com.example.schoolorgonizer.alarmсlock.AlarmClockFragment
 import com.example.schoolorgonizer.callSchedule.CallScheduleFragment
 import com.example.schoolorgonizer.databinding.ActivityMainBinding
@@ -12,7 +15,7 @@ import com.example.schoolorgonizer.weather.WeatherViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class MainActivity : AppCompatActivity() {
+class      MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: WeatherViewModel by viewModel()
@@ -26,9 +29,10 @@ class MainActivity : AppCompatActivity() {
             // Погода
             update()
         })
-        // Расписание уроков
+        // Расписание звонков
         binding.btnCallSchedule.setOnClickListener {
 
+//           findNavController().navigate(R.id.toCallScheduleFragment,null)
             supportFragmentManager.beginTransaction()
                 .replace(binding.cFragmentCall.id, CallScheduleFragment(), CallScheduleFragment.TAG)
                 .addToBackStack(null)
@@ -46,8 +50,7 @@ class MainActivity : AppCompatActivity() {
         }
         //Будила
         binding.btnAlarmClock.setOnClickListener {
-//            val intent = Intent(this, AlarmClockActivity::class.java)
-//            startActivity(intent)
+
                 supportFragmentManager.beginTransaction()
                     .replace(binding.cFragmentCall.id, AlarmClockFragment(), AlarmClockFragment.TAG)
                     .addToBackStack(null)

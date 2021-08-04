@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation">
+
+    <fragment
+        android:id="@+id/mainActivity"
+        android:name="com.example.schoolorgonizer.MainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/activity_main">
+        <action
+            android:id="@+id/toCallScheduleFragment"
+            app:destination="@+id/callScheduleFragment"
+            />
+        <action
+            android:id="@+id/toAlarmClockFragment"
+            app:destination="@+id/alarmClockFragment"
+            />
+        <action
+            android:id="@+id/toNoteFragment"
+            app:destination="@+id/noteFragment"
+            />
+    </fragment>
+
+    <fragment
+    android:id="@+id/callScheduleFragment"
+    android:name="com.example.schoolorgonizer.callSchedule.CallScheduleFragment"
+    android:label="CallScheduleFragment"
+    tools:layout="@layout/fragment_call_schedule">
+    <action
+        android:id="@+id/toMainActivity"
+        app:destination="@+id/mainActivity"
+        />
+</fragment>
+
+    <fragment
+        android:id="@+id/alarmClockFragment"
+        android:name="com.example.schoolorgonizer.alarmсlock.AlarmClockFragment"
+        android:label="AlarmLoginFragment"
+        tools:layout="@layout/fragment_alarm_clock">
+        <action
+            android:id="@+id/toMainActivity"
+            app:destination="@+id/mainActivity"
+            />
+        <action
+            android:id="@+id/toRingtonFragment"
+            app:destination="@+id/ringtonFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.schoolorgonizer.notes.NoteFragment"
+        android:label="NoteFragment"
+        tools:layout="@layout/fragment_note">
+        <action
+            android:id="@+id/toMainActivity"
+            app:destination="@+id/mainActivity"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/ringtonFragment"
+        android:name="com.example.schoolorgonizer.alarmсlock.RingtonFragment"
+        android:label="AlarmLoginFragment"
+        tools:layout="@layout/fragment_rington">
+        <action
+            android:id="@+id/toAlarmClockFragment"
+            app:destination="@+id/alarmClockFragment"
+            />
+    </fragment>
+
+</navigation>

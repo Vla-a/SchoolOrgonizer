@@ -15,7 +15,8 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stop" />
 
     <TimePicker
         android:id="@+id/timePicker"
@@ -23,20 +24,23 @@
         android:layout_height="200dp"
         android:timePickerMode="spinner"
         android:visibility="invisible"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stop" />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_date"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:text="@string/Set_the_date"
+        android:layout_margin="8dp"
         app:icon="@drawable/ic_baseline_date_range_24"
-        app:layout_constraintBottom_toTopOf="@+id/calendarView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_singl" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_time"
@@ -44,16 +48,17 @@
         android:layout_height="wrap_content"
         android:text="@string/Set_the_time"
         app:icon="@drawable/ic_baseline_access_time_24"
-        app:layout_constraintBottom_toTopOf="@+id/btn_date"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_date" />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_st"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+android:layout_margin="8dp"
         android:text="@string/START"
         app:icon="@drawable/ic_baseline_access_alarms_24"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,22 +68,73 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_stop"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="@string/STOP"
-        app:icon="@drawable/ic_baseline_access_alarms_24"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_time" />
 
     <TextView
         android:id="@+id/tv_tex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24dp"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_st"
-
         tools:text="Завтра взять форму" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_singl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/singl"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tex" />
+
+        <RadioGroup
+            android:id="@+id/rington"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="16dp"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_date">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rington"/>
+            <RadioButton
+                android:id="@+id/chip1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="string/answer1" />
+
+            <RadioButton
+                android:id="@+id/chip2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="string/answer2" />
+
+            <RadioButton
+                android:id="@+id/chip3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="string/answer3" />
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="56dp"
+                android:text="ok" />
+        </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
