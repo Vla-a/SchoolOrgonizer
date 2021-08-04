@@ -24,11 +24,26 @@ class AlarmService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
+        var generalTrek = R.raw.done
+        val  trek = intent?.getStringExtra("TREK").toString()
+        Log.e("KEK", trek)
+        when (trek) {
+            TREK1 -> {
+                generalTrek = R.raw.carlson
+            }
+            TREK2 -> {
+                generalTrek = R.raw.trek
+            }
+            TREK3 -> {
+                generalTrek = R.raw.callsound
+            }
+            TREK4 -> {
+                generalTrek = R.raw.done
+            }
+        }
 
-        mp = MediaPlayer.create(this,R.raw.carlson)
+        mp = MediaPlayer.create(this, generalTrek )
         mp.start()
-
-        val s = intent?.getStringExtra("TREK") as String
 
         val notificationBuilder =
             NotificationCompat.Builder(this, CHANNEL_ID)
@@ -38,7 +53,6 @@ class AlarmService : Service() {
                 .setContentText(getString(R.string.alarm))
                 .setColor(Color.GREEN)
                 .setAutoCancel(true)
-
 
 //                .setContentText("$hour : $minutes")
 
@@ -81,6 +95,10 @@ class AlarmService : Service() {
     companion object {
         const val CHANNEL_ID = "CHANNEL_ID"
         const val NOTIFICATION_CHANNEL = "NOTIFICATION_CHANNEL"
+        const val TREK1 = "trek1"
+        const val TREK2 = "trek2"
+        const val TREK3 = "trek3"
+        const val TREK4 = "trek4"
     }
 
 }
