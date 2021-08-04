@@ -19,7 +19,7 @@ class WeatherViewModel(
         getResultWeather()
     }
 
-    private fun getResultWeather() {
+     fun getResultWeather() {
         try {
             viewModelScope.launch {
                 val result = withContext(Dispatchers.IO) {

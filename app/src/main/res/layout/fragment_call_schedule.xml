@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple_200">
+    android:background="@drawable/schoo">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:textColor="@color/teal_200"/>
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/nv_text1"
         android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textSize="24dp"
-        android:textColor="@color/my_collor"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/nv_text2"
@@ -34,7 +34,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textSize="24dp"
-        android:textColor="@color/my_collor"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/nv_text3"
@@ -45,7 +45,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textSize="24dp"
-        android:textColor="@color/my_collor"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/nv_text4"
@@ -56,7 +56,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textSize="24dp"
-        android:textColor="@color/my_collor"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/nv_text5"
@@ -67,7 +67,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textSize="24dp"
-        android:textColor="@color/my_collor"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/nv_text6"
@@ -78,7 +78,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textSize="24dp"
-        android:textColor="@color/my_collor"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/nv_text7"
@@ -89,6 +89,6 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textSize="24dp"
-        android:textColor="@color/my_collor"/>
+        android:textColor="@color/white"/>
 
 </LinearLayout>

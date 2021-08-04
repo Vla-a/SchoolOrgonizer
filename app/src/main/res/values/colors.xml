@@ -11,4 +11,6 @@
     <color name="purple">#9E88C3</color>
     <color name="white">#FDFDFC</color>
     <color name="red">#D37171</color>
+    <color name="ic_launcher_backgroun">#9F3DDC</color>
+    <color name="ic_launcher_background">#5F3DDC</color>
 </resources>

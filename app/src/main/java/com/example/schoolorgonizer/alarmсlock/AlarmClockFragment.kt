@@ -17,9 +17,7 @@ import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import java.util.*
 import android.os.SystemClock
-
-
-
+import com.example.schoolorgonizer.R
 
 
 @KoinApiExtension
@@ -101,13 +99,9 @@ class AlarmClockFragment : Fragment(), KoinComponent {
 
             Toast.makeText(
                 context,
-                "${getString(com.example.schoolorgonizer.R.string.add_new_alarm).toString()} на ${binding?.timePicker?.hour}:${binding?.timePicker?.minute}",
+                "${getString(R.string.add_new_alarm).toString()} на ${binding?.timePicker?.hour}:${binding?.timePicker?.minute}",
                 Toast.LENGTH_SHORT
             ).show()
-
-
-//                "${getString(R.string.add_new_alarm).toString()} на ${binding?.timePicker?.hour}:${binding?.timePicker?.minute}"
-
 
         }
         binding!!.btnStop.setOnClickListener {

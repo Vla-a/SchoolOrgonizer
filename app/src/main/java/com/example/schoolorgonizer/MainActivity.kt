@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment.findNavController
+import com.bumptech.glide.Glide
 
 
 import com.example.schoolorgonizer.alarmсlock.AlarmClockFragment
@@ -12,6 +13,7 @@ import com.example.schoolorgonizer.callSchedule.CallScheduleFragment
 import com.example.schoolorgonizer.databinding.ActivityMainBinding
 import com.example.schoolorgonizer.notes.NoteFragment
 import com.example.schoolorgonizer.weather.WeatherViewModel
+import com.example.schoolorgonizer.weather.data.WeatherResult
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -27,8 +29,11 @@ class      MainActivity : AppCompatActivity() {
 
         viewModel.liveData.observe(this, {
             // Погода
-            update()
+            update(it)
         })
+        binding.lWeather.setOnClickListener{
+            viewModel.getResultWeather()
+        }
         // Расписание звонков
         binding.btnCallSchedule.setOnClickListener {
 
@@ -66,23 +71,23 @@ class      MainActivity : AppCompatActivity() {
                 .commit()
         }
     }
-    private fun update() {
-        val resultWeather = viewModel.liveData.value
+
+    private fun update(resultWeather: WeatherResult) {
 
         binding.tvCity.text = resultWeather?.name
         binding.tvTemp.text = "${resultWeather?.temp?.toInt()} °C"
         binding.tvCloud.text = resultWeather?.description
-//            ?.replace("[", "")
-//            ?.replace("]", "")
-//        val url = "https://openweathermap.org/img/wn/${resultWeather?.iconId}@2x.png"//тут падает
-//            .replace("[", "")
-//            .replace("]", "")
-//
-//        Glide
-//            .with(binding.root)
-//            .load(url)
-////            .placeholder(R.drawable.ic_meteocast_sun_and_cloud)
-//            .into(binding.ivIcon)
+            ?.replace("[", "")
+            ?.replace("]", "")
+        val url = "https://openweathermap.org/img/wn/${resultWeather?.iconId}@2x.png"
+            .replace("[", "")
+            .replace("]", "")
+
+        Glide
+            .with(binding.root)
+            .load(url)
+            .placeholder(R.drawable.img)
+            .into(binding.iconWeather)
     }
 }
 
