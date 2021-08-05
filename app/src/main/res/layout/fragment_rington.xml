@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
+    android:layout_width="150dp"
     android:layout_height="300dp"
     android:layout_gravity="center"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <TextView
@@ -10,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="string/question"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:layout_margin="6dp"/>
 
     <RadioGroup
@@ -19,33 +20,41 @@
         android:id="@+id/activity_main_answers">
 
         <RadioButton
-            android:id="@+id/chip1"
+            android:id="@+id/trek1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="string/answer1"
+            android:text="@string/trek1"
             />
 
         <RadioButton
-            android:id="@+id/chip2"
+            android:id="@+id/trek2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="string/answer2"
+            android:text="@string/trek2"
             />
 
         <RadioButton
-            android:id="@+id/chip3"
+            android:id="@+id/trek3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="string/answer3"
+            android:text="@string/trek3"
+            />
+
+        <RadioButton
+            android:id="@+id/trek4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trek4"
             />
 
     </RadioGroup>
 
     <Button
+        android:id="@+id/main_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:text="ok"
-        android:id="@+id/activity_main_submit"/>
+        />
 
 </LinearLayout>

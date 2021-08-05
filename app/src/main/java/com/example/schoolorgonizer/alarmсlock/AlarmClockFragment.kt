@@ -17,13 +17,17 @@ import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import java.util.*
 import android.os.SystemClock
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.findNavController
 import com.example.schoolorgonizer.R
 
 
 @KoinApiExtension
 class AlarmClockFragment : Fragment(), KoinComponent {
 
-
+    private var id = ""
     private var binding: FragmentAlarmClockBinding? = null
     private var alarmDate: Calendar = Calendar.getInstance().apply { time = Date() }
     private val alarmManager: AlarmManager by inject()
@@ -43,29 +47,13 @@ class AlarmClockFragment : Fragment(), KoinComponent {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        setFragmentResultListener("TEST") { key, bundle ->
+            val trek = bundle.getString("KEY1")
+            binding!!.tvTex.text = trek
+        }
 
         binding!!.btnSingl.setOnClickListener {
-
-            binding!!.rington.visibility = View.VISIBLE
-        }
-        binding!!.btnOk.setOnClickListener {
-            binding!!.rington.visibility = View.INVISIBLE
-
-            when {
-                binding!!.chip1.isChecked -> {
-                    binding?.tvTex?.text = AlarmService.TREK1
-                }
-                binding!!.chip2.isChecked -> {
-                    binding?.tvTex?.text = AlarmService.TREK2
-                }
-                binding!!.chip3.isChecked -> {
-                    binding?.tvTex?.text = AlarmService.TREK3
-                }
-                binding!!.chip4.isChecked -> {
-                    binding?.tvTex?.text = AlarmService.TREK4
-                }
-            }
+            it.findNavController().navigate(AlarmClockFragmentDirections.toRingtonFragment())
         }
 
         binding!!.btnDate.setOnClickListener {
@@ -112,13 +100,7 @@ class AlarmClockFragment : Fragment(), KoinComponent {
                 Intent(activity, AlarmService::class.java),
                 PendingIntent.FLAG_UPDATE_CURRENT))
 
-//            it.findNavController().navigate(R.id.toCallScheduleFragment,null)
         }
-    }
-
-    companion object {
-        const val TAG = "AlarmClockAFragment"
-
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -133,7 +115,17 @@ class AlarmClockFragment : Fragment(), KoinComponent {
             myAnotherService,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmDate.timeInMillis,1000, pendingIntent)
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP,
+            alarmDate.timeInMillis,
+            1000,
+            pendingIntent
+        )
     }
+    companion object {
+        const val TAG = "AlarmClockAFragment"
+
+    }
+
 }
 

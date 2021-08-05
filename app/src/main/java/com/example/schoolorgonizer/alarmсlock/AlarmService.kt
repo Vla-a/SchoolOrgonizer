@@ -58,7 +58,7 @@ class AlarmService : Service() {
 
 
 
-        val notificationIntent = Intent(baseContext,MainActivity::class.java)
+        val notificationIntent = Intent(this,MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this,
             0,

@@ -12,6 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.schoolorgonizer.MySuperApp
 import com.example.schoolorgonizer.databinding.FragmentNoteBinding
+
+
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NoteFragment : Fragment() {
