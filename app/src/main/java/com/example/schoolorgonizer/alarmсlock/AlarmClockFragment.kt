@@ -42,7 +42,6 @@ class AlarmClockFragment : Fragment(), KoinComponent {
         return binding?.root
     }
 
-
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -130,6 +129,5 @@ class AlarmClockFragment : Fragment(), KoinComponent {
         const val TAG = "AlarmClockAFragment"
 
     }
-
 }
 
