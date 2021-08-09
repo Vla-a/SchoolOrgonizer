@@ -8,11 +8,12 @@
 
     <DatePicker
         android:id="@+id/calendarView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
         android:visibility="invisible"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,34 +21,49 @@
 
     <TimePicker
         android:id="@+id/timePicker"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:timePickerMode="spinner"
         android:visibility="invisible"
-
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_stop" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_return"
+        android:layout_width="66dp"
+        android:layout_height="46dp"
+        app:backgroundTint="@color/red"
+        android:layout_margin="8dp"
+        app:icon="@drawable/ic_baseline_west_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_date"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        app:backgroundTint="@color/yellow"
         android:text="@string/Set_the_date"
+        android:textColor="@color/black"
         android:layout_margin="8dp"
         app:icon="@drawable/ic_baseline_date_range_24"
+        app:iconTint="@color/blakk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_singl" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_singl"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:backgroundTint="@color/yellow"
         android:text="@string/Set_the_time"
+        android:textColor="@color/black"
         app:icon="@drawable/ic_baseline_access_time_24"
+        app:iconTint="@color/blakk"
         android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,9 +74,12 @@
         android:id="@+id/btn_st"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-android:layout_margin="8dp"
+        android:layout_marginTop="100dp"
         android:text="@string/START"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/yellow"
         app:icon="@drawable/ic_baseline_access_alarms_24"
+        app:iconTint="@color/blakk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,8 +88,10 @@ android:layout_margin="8dp"
         android:id="@+id/btn_stop"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:text="@string/STOP"
         android:layout_margin="8dp"
+        app:backgroundTint="@color/yellow"
+        android:text="@string/STOP"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_time" />
@@ -90,57 +111,12 @@ android:layout_margin="8dp"
         android:id="@+id/btn_singl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/singl"
         android:layout_margin="8dp"
+        app:backgroundTint="@color/yellow"
+        android:text="@string/singl"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_tex" />
 
-        <RadioGroup
-            android:id="@+id/rington"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:elevation="16dp"
-            android:orientation="vertical"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btn_date">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/rington"/>
-            <RadioButton
-                android:id="@+id/chip1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/trek1" />
-
-            <RadioButton
-                android:id="@+id/chip2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/trek2" />
-
-            <RadioButton
-                android:id="@+id/chip3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/trek3" />
-
-            <RadioButton
-                android:id="@+id/chip4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/trek4" />
-
-            <Button
-                android:id="@+id/btn_ok"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="56dp"
-                android:text="ok" />
-        </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

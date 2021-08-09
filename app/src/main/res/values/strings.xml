@@ -21,14 +21,14 @@
     <string name="STOP">СТОП</string>
     <string name="alarm">БУДИЛЬНИК</string>
     <string name="add_new_alarm">"Будильник создан"</string>
-    <string name="Set_the_date">"Установить дату"</string>
-    <string name="Set_the_time">"Установить время"</string>
-    <string name="add_new_note">"Создать заметку"</string>
+    <string name="Set_the_date">Установить дату</string>
+    <string name="Set_the_time">Установить время</string>
+    <string name="add_new_note">Создать заметку</string>
     <string name="singl">"Выбрать мелодию"</string>
-    <string name="rington">"Выбор мелодии"</string>
-    <string name="trek1">"trek1"</string>
-    <string name="trek2">"trek2"</string>
-    <string name="trek3">"trek3"</string>
-    <string name="trek4">"trek4"</string>
+    <string name="ringtone">"Выбор мелодии"</string>
+    <string name="ringtone1">"ringtone1"</string>
+    <string name="ringtone2">"ringtone2"</string>
+    <string name="ringtone3">"ringtone3"</string>
+    <string name="ringtone4">"ringtone4"</string>
 
 </resources>

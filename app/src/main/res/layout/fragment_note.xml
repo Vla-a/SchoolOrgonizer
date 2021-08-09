@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/schoo">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_return"
+        android:layout_width="66dp"
+        android:layout_height="46dp"
+        app:backgroundTint="@color/red"
+        android:layout_margin="8dp"
+        app:icon="@drawable/ic_baseline_west_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_note"

@@ -2,14 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/schoo">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_r"
+        android:layout_width="66dp"
+        android:layout_height="46dp"
+        app:backgroundTint="@color/red"
+        android:layout_marginStart="8dp"
+        app:icon="@drawable/ic_baseline_west_24" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lesson"
-        android:layout_margin="50dp"
+        android:layout_margin="18dp"
         android:layout_gravity="center"
         android:textSize="24dp"
         android:textStyle="bold"

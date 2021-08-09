@@ -56,6 +56,10 @@ class AlarmClockFragment : Fragment(), KoinComponent {
             it.findNavController().navigate(AlarmClockFragmentDirections.toRingtonFragment())
         }
 
+        binding!!.btnReturn.setOnClickListener {
+            it.findNavController().popBackStack()
+        }
+
         binding!!.btnDate.setOnClickListener {
             binding!!.calendarView.visibility = View.VISIBLE
             binding!!.timePicker.visibility = View.INVISIBLE
