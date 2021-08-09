@@ -54,10 +54,6 @@ class AlarmService : Service() {
                 .setColor(Color.GREEN)
                 .setAutoCancel(true)
 
-//                .setContentText("$hour : $minutes")
-
-
-
         val notificationIntent = Intent(this,MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this,
