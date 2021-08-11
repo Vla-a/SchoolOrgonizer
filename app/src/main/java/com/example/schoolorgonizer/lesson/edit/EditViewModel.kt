@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.schoolorgonizer.lesson.Message
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -21,7 +22,9 @@ class EditViewModel(
         viewModelScope.launch(Dispatchers.IO) {
 
                 messageListLiveData.postValue(editRepository.getDayList(date))
+            delay(4000)
         }
-        }
+
+    }
 
     }

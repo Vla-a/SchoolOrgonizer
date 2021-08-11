@@ -38,8 +38,9 @@ class EditFragment : Fragment(), KoinComponent {
 
         setFragmentResultListener("DAY") { key, bundle ->
             binding.string.text = bundle.getString("KEY2")
+            viewModels.getList( binding.string.text.toString())
         }
-        viewModels.getList( "Вторник")
+
 
         val dayAdapter = DayAdapter()
 
