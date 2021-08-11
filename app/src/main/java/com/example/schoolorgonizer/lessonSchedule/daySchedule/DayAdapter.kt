@@ -1,4 +1,4 @@
-package com.example.schoolorgonizer.lesson.edit
+package com.example.schoolorgonizer.lessonSchedule.daySchedule
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolorgonizer.databinding.ItemDayBinding
-import com.example.schoolorgonizer.lesson.Message
+import com.example.schoolorgonizer.lessonSchedule.Lessons
 
-class DayAdapter() : ListAdapter<Message, DayAdapter.DayViewHolder>(DiffUtilItemCallback()) {
+class DayAdapter() : ListAdapter<Lessons, DayAdapter.DayViewHolder>(DiffUtilItemCallback()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayViewHolder =
@@ -24,19 +24,19 @@ class DayAdapter() : ListAdapter<Message, DayAdapter.DayViewHolder>(DiffUtilItem
         private val bindingView: ItemDayBinding
     ) : RecyclerView.ViewHolder(bindingView.root) {
 
-        fun bind(item: Message) {
+        fun bind(item: Lessons) {
             bindingView.tvText.text = item.name
             bindingView.tvDate.text = item.id.toString()
         }
     }
 }
 
-class DiffUtilItemCallback : DiffUtil.ItemCallback<Message>() {
-    override fun areItemsTheSame(oldItem: Message, newItem: Message): Boolean {
+class DiffUtilItemCallback : DiffUtil.ItemCallback<Lessons>() {
+    override fun areItemsTheSame(oldItem: Lessons, newItem: Lessons): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: Message, newItem: Message): Boolean {
+    override fun areContentsTheSame(oldItem: Lessons, newItem: Lessons): Boolean {
         return oldItem.date == newItem.date && oldItem.name == newItem.name
     }
 

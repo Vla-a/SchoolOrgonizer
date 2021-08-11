@@ -1,4 +1,4 @@
-package com.example.schoolorgonizer.lesson
+package com.example.schoolorgonizer.lessonSchedule.schedule
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,15 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.schoolorgonizer.databinding.FragmentScheduleBinding
+import com.example.schoolorgonizer.lessonSchedule.Lessons
+import com.example.schoolorgonizer.lessonSchedule.MessageAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class SchedueFragment : Fragment() {
+class ScheduleFragment : Fragment() {
 
     private lateinit var binding: FragmentScheduleBinding
-    private val viewModels: SchedueViewModel by viewModel()
+    private val viewModels: ScheduleViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,12 +52,12 @@ class SchedueFragment : Fragment() {
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding?.rvDay?.adapter = messageAdapter
 
-        viewModels.messageListLiveData.observe(this.viewLifecycleOwner, Observer {
+        viewModels.lessonsListLiveData.observe(this.viewLifecycleOwner, Observer {
             messageAdapter.submitList(it)
         })
     }
 
-    fun clickListener(lesson: Message) {
+    fun clickListener(lesson: Lessons) {
         viewModels.deleteMessage(lesson)
     }
 }

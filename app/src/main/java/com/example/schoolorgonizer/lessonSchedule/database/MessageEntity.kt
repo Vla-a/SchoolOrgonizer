@@ -1,4 +1,4 @@
-package com.example.schoolorgonizer.lesson.database
+package com.example.schoolorgonizer.lessonSchedule.database
 
 import androidx.room.Entity
 

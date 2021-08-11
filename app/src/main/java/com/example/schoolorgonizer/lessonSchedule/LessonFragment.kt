@@ -1,4 +1,4 @@
-package com.example.schoolorgonizer.lesson
+package com.example.schoolorgonizer.lessonSchedule
 
 import android.os.Build
 import android.os.Bundle
@@ -32,35 +32,35 @@ class LessonFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding!!.btnMonday.setOnClickListener {
-            it.findNavController().navigate(LessonFragmentDirections.toEditFragment())
+            it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
             setFragmentResult("DAY", Bundle().apply {
                 putString("KEY2", binding!!.btnMonday.text.toString())
             })
         }
 
         binding!!.btnTuesday.setOnClickListener {
-            it.findNavController().navigate(LessonFragmentDirections.toEditFragment())
+            it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
             setFragmentResult("DAY", Bundle().apply {
                 putString("KEY2", binding!!.btnTuesday.text.toString())
             })
         }
 
         binding!!.btnWednesday.setOnClickListener {
-            it.findNavController().navigate(LessonFragmentDirections.toEditFragment())
+            it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
             setFragmentResult("DAY", Bundle().apply {
                 putString("KEY2", binding!!.btnWednesday.text.toString())
             })
         }
 
         binding!!.btnThursday.setOnClickListener {
-            it.findNavController().navigate(LessonFragmentDirections.toEditFragment())
+            it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
             setFragmentResult("DAY", Bundle().apply {
                 putString("KEY2", binding!!.btnThursday.text.toString())
             })
         }
 
         binding!!.btnFriday.setOnClickListener {
-            it.findNavController().navigate(LessonFragmentDirections.toEditFragment())
+            it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
             setFragmentResult("DAY", Bundle().apply {
                 putString("KEY2", binding!!.btnFriday.text.toString())
             })

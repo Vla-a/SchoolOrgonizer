@@ -1,4 +1,4 @@
-package com.example.schoolorgonizer.lesson.edit
+package com.example.schoolorgonizer.lessonSchedule.daySchedule
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,14 +9,14 @@ import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.schoolorgonizer.databinding.FragmentEditBinding
+import com.example.schoolorgonizer.databinding.FragmentDayScheduleBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
 
-class EditFragment : Fragment(), KoinComponent {
+class DayScheduleFragment : Fragment(), KoinComponent {
 
-    private lateinit var binding: FragmentEditBinding
-    private val viewModels: EditViewModel by viewModel()
+    private lateinit var binding: FragmentDayScheduleBinding
+    private val viewModels: DayScheduleViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -25,7 +25,7 @@ class EditFragment : Fragment(), KoinComponent {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentEditBinding.inflate(inflater, container, false)
+        binding = FragmentDayScheduleBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -48,7 +48,7 @@ class EditFragment : Fragment(), KoinComponent {
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding?.rvMessage?.adapter = dayAdapter
 
-        viewModels.messageListLiveData.observe(this.viewLifecycleOwner, Observer {
+        viewModels.lessonsListLiveData.observe(this.viewLifecycleOwner, Observer {
             dayAdapter.submitList(it)
         })
 

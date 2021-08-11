@@ -34,12 +34,12 @@
 
     <fragment
         android:id="@+id/lessonFragment"
-        android:name="com.example.schoolorgonizer.lesson.LessonFragment"
+        android:name="com.example.schoolorgonizer.lessonSchedule.LessonFragment"
         android:label="LessonFragment"
         tools:layout="@layout/fragment_lesson">
         <action
-            android:id="@+id/toEditFragment"
-            app:destination="@+id/editFragment"/>
+            android:id="@+id/toDayScheduleFragment"
+            app:destination="@+id/dayScheduleFragment"/>
         <action
             android:id="@+id/toScheduleFragment"
             app:destination="@+id/scheduleFragment"/>
@@ -49,16 +49,16 @@
 
     <fragment
         android:id="@+id/scheduleFragment"
-        android:name="com.example.schoolorgonizer.lesson.SchedueFragment"
+        android:name="com.example.schoolorgonizer.lessonSchedule.schedule.ScheduleFragment"
         android:label="ScheduleFragment"
         tools:layout="@layout/fragment_schedule">
     </fragment>
 
     <fragment
-        android:id="@+id/editFragment"
-        android:name="com.example.schoolorgonizer.lesson.edit.EditFragment"
+        android:id="@+id/dayScheduleFragment"
+        android:name="com.example.schoolorgonizer.lessonSchedule.daySchedule.DayScheduleFragment"
         android:label="EditFragment"
-        tools:layout="@layout/fragment_edit">
+        tools:layout="@layout/fragment_day_schedule">
     </fragment>
 
     <fragment
@@ -66,10 +66,7 @@
     android:name="com.example.schoolorgonizer.callSchedule.CallScheduleFragment"
     android:label="CallScheduleFragment"
     tools:layout="@layout/fragment_call_schedule">
-<!--    <action-->
-<!--        android:id="@+id/toMainActivity"-->
-<!--        app:destination="@+id/mainActivity"-->
-<!--        />-->
+
 </fragment>
 
     <fragment
@@ -89,20 +86,14 @@
         android:name="com.example.schoolorgonizer.notes.NoteFragment"
         android:label="NoteFragment"
         tools:layout="@layout/fragment_note">
-<!--        <action-->
-<!--            android:id="@+id/toMainActivity"-->
-<!--            app:destination="@+id/mainActivity"-->
-<!--            />-->
+
     </fragment>
     <fragment
         android:id="@+id/ringtonFragment"
         android:name="com.example.schoolorgonizer.alarmсlock.RingtonFragment"
         android:label="AlarmLoginFragment"
         tools:layout="@layout/fragment_rington">
-<!--        <action-->
-<!--            android:id="@+id/toAlarmClockFragment"-->
-<!--            app:destination="@+id/alarmClockFragment"-->
-<!--            />-->
+
     </fragment>
 
 </navigation>

@@ -1,6 +1,6 @@
-package com.example.schoolorgonizer.lesson.database
+package com.example.schoolorgonizer.lessonSchedule.database
 
-import com.example.schoolorgonizer.lesson.Message
+import com.example.schoolorgonizer.lessonSchedule.Lessons
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -8,10 +8,10 @@ class MessageRepository(
     private val lessonDao: LessonDao
 ) {
 
-    fun getLessonList(): Flow<List<Message>> =
+    fun getLessonList(): Flow<List<Lessons>> =
         lessonDao.getLessonList().map { messageEntities ->
             messageEntities.map { messageEntities ->
-                Message(messageEntities.name, messageEntities.date, messageEntities.id)
+                Lessons(messageEntities.name, messageEntities.date, messageEntities.id)
             }
         }
 
@@ -20,10 +20,10 @@ class MessageRepository(
 
     }
 
-    suspend fun deleteLesson(lesson: Message) {
+    suspend fun deleteLesson(lesson: Lessons) {
 
         lessonDao.deleteLesson(lesson.entity())
     }
 
-    private fun Message.entity() = MessageEntity(this.name, this.date, this.id)
+    private fun Lessons.entity() = MessageEntity(this.name, this.date, this.id)
 }

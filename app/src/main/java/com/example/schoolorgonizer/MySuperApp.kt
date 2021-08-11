@@ -3,14 +3,12 @@ package com.example.schoolorgonizer
 import android.app.AlarmManager
 import android.app.Application
 import android.content.Context
-import android.os.Message
-import com.example.schoolorgonizer.lesson.SchedueFragment
-import com.example.schoolorgonizer.lesson.SchedueViewModel
-import com.example.schoolorgonizer.lesson.database.DataConstructor
-import com.example.schoolorgonizer.lesson.database.MessageDatabase
-import com.example.schoolorgonizer.lesson.database.MessageRepository
-import com.example.schoolorgonizer.lesson.edit.EditRepository
-import com.example.schoolorgonizer.lesson.edit.EditViewModel
+import com.example.schoolorgonizer.lessonSchedule.schedule.ScheduleViewModel
+import com.example.schoolorgonizer.lessonSchedule.database.DataConstructor
+import com.example.schoolorgonizer.lessonSchedule.database.MessageDatabase
+import com.example.schoolorgonizer.lessonSchedule.database.MessageRepository
+import com.example.schoolorgonizer.lessonSchedule.daySchedule.DayScheduleRepository
+import com.example.schoolorgonizer.lessonSchedule.daySchedule.DayScheduleViewModel
 
 import com.example.schoolorgonizer.notes.NoteFragmentViewModel
 import com.example.schoolorgonizer.notes.database.DatabaseConstructor
@@ -43,15 +41,15 @@ class MySuperApp : Application(), KoinComponent {
     private val viewModels = module {
         viewModel { WeatherViewModel(get()) }
         viewModel { NoteFragmentViewModel(get()) }
-        viewModel { SchedueViewModel(get()) }
-        viewModel { EditViewModel(get()) }
+        viewModel { ScheduleViewModel(get()) }
+        viewModel { DayScheduleViewModel(get()) }
     }
 
     private val repository = module {
         factory { ApiRepository(get()) }
         factory { NoteRepository(get()) }
         factory { MessageRepository(get())}
-        factory { EditRepository(get()) }
+        factory { DayScheduleRepository(get()) }
     }
 
     private val api = module {
