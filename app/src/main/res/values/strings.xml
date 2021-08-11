@@ -5,7 +5,7 @@
     <string name="alarm_clock">Будильник</string>
     <string name="notes">Заметки</string>
     <string name="school_news">Новости школы</string>
-    <string name="school_of_the_map">Школа на карте</string>
+    <string name="map">Местоположение</string>
     <string name="sky">Небо:</string>
     //lesson
     <string name="lesson1">1-й урок: с 08:30 до 09:15 </string>
@@ -53,6 +53,8 @@
         <item> 3 </item>
         <item> 4 </item>
         <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
     </string-array>
 
     <string name="choose">Choose Lesson</string>

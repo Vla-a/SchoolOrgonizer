@@ -21,9 +21,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/content"
-            android:background="#80ffffff"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#80ffffff">
 
             <TextView
                 android:id="@+id/tv_text"
@@ -46,10 +46,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:alpha=".7"
                 android:fontFamily="sans-serif"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:alpha=".7"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="23.03.2021" />

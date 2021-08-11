@@ -6,6 +6,10 @@
     android:orientation="vertical"
     android:background="@drawable/schoo">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_r"
         android:layout_width="66dp"
@@ -18,11 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lesson"
-        android:layout_margin="18dp"
         android:layout_gravity="center"
+        android:layout_marginStart="8dp"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/purple_700"/>
+    </LinearLayout>
     <TextView
         android:id="@+id/nv_text1"
         android:layout_width="wrap_content"

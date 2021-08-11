@@ -7,10 +7,12 @@
     android:background="@drawable/schoo">
 
     <TextView
+        android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lesson_schedule"
         android:textSize="24dp"
+        android:layout_marginTop="12dp"
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btn_monday"
@@ -28,64 +30,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_monday"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="18dp"
         android:text="@string/Monday"
-        app:backgroundTint="@color/my_collor"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/btn_return" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_tuesday"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        app:cornerRadius="12dp"
         android:text="@string/Tuesday"
-        app:backgroundTint="@color/my_collor"
+        app:backgroundTint="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_monday" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_thursday"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:textColor="@color/black"
+        app:cornerRadius="12dp"
         android:text="@string/Thursday"
-        app:backgroundTint="@color/my_collor"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_wednesday" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_wednesday"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:textColor="@color/black"
+        app:cornerRadius="12dp"
         android:text="@string/Wednesday"
-        app:backgroundTint="@color/my_collor"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_tuesday" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_friday"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginTop="28dp"
+        app:cornerRadius="12dp"
+        android:textColor="@color/black"
         android:text="@string/Friday"
-        app:backgroundTint="@color/my_collor"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_thursday"
@@ -93,12 +99,13 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_edit"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        app:cornerRadius="12dp"
         android:text="@string/Edit"
-        app:backgroundTint="@color/my_collor"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_friday" />

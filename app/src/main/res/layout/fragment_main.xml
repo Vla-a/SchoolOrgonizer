@@ -9,76 +9,68 @@
 
     <Button
         android:id="@+id/btn_call_schedule"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="64dp"
+        android:textColor="@color/black"
         android:text="@string/call_schedule"
-        app:backgroundTint="@color/my_collor"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_lesson_schedule"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        app:cornerRadius="12dp"
+        android:textColor="@color/black"
         android:text="@string/lesson_schedule"
-        app:backgroundTint="@color/my_collor"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_call_schedule" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_notes"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:layout_margin="16dp"
         android:text="@string/notes"
-        app:backgroundTint="@color/my_collor"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_alarm_clock" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_alarm_clock"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:textColor="@color/black"
+        app:cornerRadius="12dp"
         android:text="@string/alarm_clock"
-        app:backgroundTint="@color/my_collor"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_lesson_schedule" />
 
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/btn_news"-->
-<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="16dp"-->
-<!--        android:text="@string/school_news"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btn_map" />-->
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_map"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginTop="28dp"
-        android:text="@string/school_of_the_map"
-        app:backgroundTint="@color/my_collor"
+        android:textColor="@color/black"
+        android:text="@string/map"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_notes" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

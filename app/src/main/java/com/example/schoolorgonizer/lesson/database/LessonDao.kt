@@ -7,10 +7,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface LessonDao {
 
-    @Query("SELECT * FROM lesson_table")
+    @Query("SELECT * FROM lesson_table  ORDER BY id")
     fun getLessonList(): Flow<List<MessageEntity>>
 
-    @Query("SELECT * FROM lesson_table WHERE date LIKE :date")
+    @Query("SELECT * FROM lesson_table WHERE date LIKE :date ORDER BY id")
     suspend fun getLessonList(date: String): List<MessageEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
