@@ -125,9 +125,9 @@ class AlarmClockFragment : Fragment(), KoinComponent {
             pendingIntent
         )
     }
-    companion object {
-        const val TAG = "AlarmClockAFragment"
-
-    }
+//    companion object {
+//        const val TAG = "AlarmClockAFragment"
+//
+//    }
 }
 

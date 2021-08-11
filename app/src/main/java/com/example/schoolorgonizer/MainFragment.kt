@@ -11,9 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.schoolorgonizer.databinding.ActivityMainBinding.inflate
 import com.example.schoolorgonizer.databinding.FragmentMainBinding
+
 import java.util.*
 
 class MainFragment: Fragment() {
+
 
     private var binding: FragmentMainBinding? = null
 
@@ -40,10 +42,6 @@ class MainFragment: Fragment() {
 
         }
 
-        // Новости школы
-        binding!!.btnNews.setOnClickListener {
-
-        }
         //Будила
         binding!!.btnAlarmClock.setOnClickListener {
             it.findNavController().navigate(MainFragmentDirections.toAlarmClockFragment())
@@ -52,6 +50,11 @@ class MainFragment: Fragment() {
         //Заметки
         binding!!.btnNotes.setOnClickListener {
             it.findNavController().navigate(MainFragmentDirections.toNoteFragment())
+        }
+
+        //Расписание
+        binding!!.btnLessonSchedule.setOnClickListener {
+            it.findNavController().navigate(MainFragmentDirections.toLessonFragment())
         }
     }
     companion object {

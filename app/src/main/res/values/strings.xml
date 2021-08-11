@@ -31,4 +31,55 @@
     <string name="ringtone3">"ringtone3"</string>
     <string name="ringtone4">"ringtone4"</string>
 
+    <string name="Monday">Понедельник</string>
+    <string name="Tuesday">Вторник</string>
+    <string name="Wednesday">Среда</string>
+    <string name="Thursday">Четверг</string>
+    <string name="Friday">Пятница</string>
+
+    <string name="Edit">Редактировать</string>
+
+    <string-array name="day_items">
+        <item> Понедельник </item>
+        <item> Вторник</item>
+        <item> Среда </item>
+        <item> Четверг</item>
+        <item>Пятница</item>
+    </string-array>
+
+    <string-array name="id_items">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+    </string-array>
+
+    <string name="choose">Choose Lesson</string>
+    <string name="type_day"> Input Day</string>
+    <string name="type_time"> Input Time</string>
+    <string name="type_week"> Input Week</string>
+    <string name="add"> Add</string>
+    <string name="back">Back</string>
+
+    <string-array name="spinner_items">
+        <item> Нет урока </item>
+        <item> Математика </item>
+        <item> Русский язык</item>
+        <item> Русская литература </item>
+        <item> Белорусский язык</item>
+        <item> Белорусская литература </item>
+        <item> Английский язык</item>
+        <item> География </item>
+        <item> История Беларуси </item>
+        <item> Физическая культура</item>
+        <item> Трудовое обучение </item>
+        <item> Музыка</item>
+        <item> Информатика </item>
+        <item> Классный час</item>
+        <item> Физика </item>
+        <item> Химия </item>
+        <item> Допризыв. подготовка </item>
+        <item>Доп. занятие</item>
+    </string-array>
 </resources>

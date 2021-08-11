@@ -25,6 +25,40 @@
             app:destination="@+id/noteFragment"
 
             />
+        <action
+            android:id="@+id/toLessonFragment"
+            app:destination="@+id/lessonFragment"
+
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lessonFragment"
+        android:name="com.example.schoolorgonizer.lesson.LessonFragment"
+        android:label="LessonFragment"
+        tools:layout="@layout/fragment_lesson">
+        <action
+            android:id="@+id/toEditFragment"
+            app:destination="@+id/editFragment"/>
+        <action
+            android:id="@+id/toScheduleFragment"
+            app:destination="@+id/scheduleFragment"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.example.schoolorgonizer.lesson.SchedueFragment"
+        android:label="ScheduleFragment"
+        tools:layout="@layout/fragment_schedule">
+    </fragment>
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.schoolorgonizer.lesson.edit.EditFragment"
+        android:label="EditFragment"
+        tools:layout="@layout/fragment_edit">
     </fragment>
 
     <fragment
@@ -43,10 +77,7 @@
         android:name="com.example.schoolorgonizer.alarmсlock.AlarmClockFragment"
         android:label="AlarmLoginFragment"
         tools:layout="@layout/fragment_alarm_clock">
-<!--        <action-->
-<!--            android:id="@+id/toMainActivity"-->
-<!--            app:destination="@+id/mainActivity"-->
-<!--            />-->
+
         <action
             android:id="@+id/toRingtonFragment"
             app:destination="@+id/ringtonFragment"
