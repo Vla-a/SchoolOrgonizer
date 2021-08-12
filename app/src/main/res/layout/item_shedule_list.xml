@@ -11,14 +11,12 @@
         android:layout_width="24dp"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"/>
 
     <TextView
         android:id="@+id/tv_text"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:textColor="@color/white"
         android:layout_margin="8dp"/>
     <TextView
@@ -26,6 +24,5 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"/>
 </LinearLayout>

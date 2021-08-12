@@ -15,7 +15,7 @@ import org.koin.core.component.KoinComponent
 
 class DayScheduleFragment : Fragment(), KoinComponent {
 
-    private lateinit var binding: FragmentDayScheduleBinding
+    private var binding: FragmentDayScheduleBinding? = null
     private val viewModels: DayScheduleViewModel by viewModel()
 
 
@@ -37,8 +37,8 @@ class DayScheduleFragment : Fragment(), KoinComponent {
         }
 
         setFragmentResultListener("DAY") { key, bundle ->
-            binding.string.text = bundle.getString("KEY2")
-            viewModels.getList( binding.string.text.toString())
+            binding!!.string.text = bundle.getString("KEY2")
+            viewModels.getList( binding!!.string.text.toString())
         }
 
 

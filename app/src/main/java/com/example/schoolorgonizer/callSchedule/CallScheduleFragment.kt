@@ -14,7 +14,7 @@ import com.example.schoolorgonizer.databinding.FragmentCallScheduleBinding
 
 class CallScheduleFragment : Fragment() {
 
-    private lateinit var binding: FragmentCallScheduleBinding
+    private var binding: FragmentCallScheduleBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +30,7 @@ class CallScheduleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnR.setOnClickListener {
+        binding!!.btnR.setOnClickListener {
             it.findNavController().popBackStack()
         }
 

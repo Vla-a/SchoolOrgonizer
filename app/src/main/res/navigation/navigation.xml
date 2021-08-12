@@ -13,23 +13,31 @@
         <action
             android:id="@+id/toCallScheduleFragment"
             app:destination="@+id/callScheduleFragment"
-
-            />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/toAlarmClockFragment"
             app:destination="@+id/alarmClockFragment"
-
-            />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/toNoteFragment"
             app:destination="@+id/noteFragment"
-
-            />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/toLessonFragment"
             app:destination="@+id/lessonFragment"
-
-            />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -39,13 +47,19 @@
         tools:layout="@layout/fragment_lesson">
         <action
             android:id="@+id/toDayScheduleFragment"
-            app:destination="@+id/dayScheduleFragment"/>
+            app:destination="@+id/dayScheduleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/toScheduleFragment"
-            app:destination="@+id/scheduleFragment"/>
-
+            app:destination="@+id/scheduleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
-
 
     <fragment
         android:id="@+id/scheduleFragment"
@@ -74,11 +88,13 @@
         android:name="com.example.schoolorgonizer.alarmсlock.AlarmClockFragment"
         android:label="AlarmLoginFragment"
         tools:layout="@layout/fragment_alarm_clock">
-
         <action
             android:id="@+id/toRingtonFragment"
             app:destination="@+id/ringtonFragment"
-            />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -86,14 +102,13 @@
         android:name="com.example.schoolorgonizer.notes.NoteFragment"
         android:label="NoteFragment"
         tools:layout="@layout/fragment_note">
-
     </fragment>
+
     <fragment
         android:id="@+id/ringtonFragment"
         android:name="com.example.schoolorgonizer.alarmсlock.RingtonFragment"
         android:label="AlarmLoginFragment"
         tools:layout="@layout/fragment_rington">
-
     </fragment>
 
 </navigation>

@@ -14,7 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NoteFragment : Fragment() {
 
-    private lateinit var binding: FragmentNoteBinding
+    private var binding: FragmentNoteBinding? = null
     private val viewModels: NoteFragmentViewModel by viewModel()
 
     override fun onCreateView(
@@ -37,19 +37,19 @@ class NoteFragment : Fragment() {
             it.findNavController().popBackStack()
         }
 
-        binding.btnGreta.setOnClickListener {
-            binding.editTextNote.visibility = View.VISIBLE
-            binding.btnNote.visibility = View.VISIBLE
-            binding.btnGreta.visibility = View.INVISIBLE
+        binding!!.btnGreta.setOnClickListener {
+            binding!!.editTextNote.visibility = View.VISIBLE
+            binding!!.btnNote.visibility = View.VISIBLE
+            binding!!.btnGreta.visibility = View.INVISIBLE
         }
 
         binding?.btnNote?.setOnClickListener {
 
-            binding.btnGreta.visibility = View.VISIBLE
-            binding.editTextNote.visibility = View.INVISIBLE
-            binding.btnNote.visibility = View.INVISIBLE
+            binding!!.btnGreta.visibility = View.VISIBLE
+            binding!!.editTextNote.visibility = View.INVISIBLE
+            binding!!.btnNote.visibility = View.INVISIBLE
 
-            with(binding.editTextNote) {
+            with(binding!!.editTextNote) {
                 viewModels.addMessageToDatabase(text.toString())
                 setText("")
 
