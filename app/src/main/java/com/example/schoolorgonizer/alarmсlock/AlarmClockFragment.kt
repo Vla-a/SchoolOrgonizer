@@ -18,6 +18,7 @@ import org.koin.core.component.KoinComponent
 import java.util.*
 import android.os.SystemClock
 import androidx.core.os.bundleOf
+import androidx.core.view.get
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
@@ -27,7 +28,6 @@ import com.example.schoolorgonizer.R
 @KoinApiExtension
 class AlarmClockFragment : Fragment(), KoinComponent {
 
-    private var id = ""
     private var binding: FragmentAlarmClockBinding? = null
     private var alarmDate: Calendar = Calendar.getInstance().apply { time = Date() }
     private val alarmManager: AlarmManager by inject()
@@ -90,18 +90,25 @@ class AlarmClockFragment : Fragment(), KoinComponent {
 
             Toast.makeText(
                 context,
-                "${getString(R.string.add_new_alarm).toString()} на ${binding?.timePicker?.hour}:${binding?.timePicker?.minute}",
+                "${getString(R.string.add_new_alarm)} ${binding?.calendarView?.dayOfMonth}" +
+                        ".${binding?.calendarView?.month}.${binding?.calendarView?.year} " +
+                        "в ${binding?.timePicker?.hour}:${binding?.timePicker?.minute}",
                 Toast.LENGTH_SHORT
             ).show()
 
         }
         binding!!.btnStop.setOnClickListener {
 
-            alarmManager.cancel(PendingIntent.getService(
-                context?.applicationContext,
-                1,
-                Intent(activity, AlarmService::class.java),
-                PendingIntent.FLAG_UPDATE_CURRENT))
+            Toast.makeText( context,"${getString(R.string.stop_new_alarm)}",Toast.LENGTH_SHORT).show()
+
+            alarmManager.cancel(
+                PendingIntent.getService(
+                    context?.applicationContext,
+                    1,
+                    Intent(activity, AlarmService::class.java),
+                    PendingIntent.FLAG_UPDATE_CURRENT
+                )
+            )
 
         }
     }
@@ -121,13 +128,9 @@ class AlarmClockFragment : Fragment(), KoinComponent {
         alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,
             alarmDate.timeInMillis,
-            1000,
+            10000,
             pendingIntent
         )
     }
-//    companion object {
-//        const val TAG = "AlarmClockAFragment"
-//
-//    }
 }
 

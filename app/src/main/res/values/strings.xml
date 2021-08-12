@@ -20,7 +20,9 @@
     <string name="START">запустить будильник</string>
     <string name="STOP">СТОП</string>
     <string name="alarm">БУДИЛЬНИК</string>
-    <string name="add_new_alarm">"Будильник создан"</string>
+    <string name="get_up">Пора вставать</string>
+    <string name="add_new_alarm">"Будильник сработает"</string>
+    <string name="stop_new_alarm">"Будильник выключен"</string>
     <string name="Set_the_date">Установить дату</string>
     <string name="Set_the_time">Установить время</string>
     <string name="add_new_note">Создать заметку</string>

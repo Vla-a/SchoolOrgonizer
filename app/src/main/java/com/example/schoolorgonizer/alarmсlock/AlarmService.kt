@@ -26,7 +26,7 @@ class AlarmService : Service() {
 
         var generalTrek = R.raw.done
         val  trek = intent?.getStringExtra("TREK").toString()
-        Log.e("KEK", trek)
+
         when (trek) {
             TREK1 -> {
                 generalTrek = R.raw.carlson
@@ -50,13 +50,9 @@ class AlarmService : Service() {
                 .setSmallIcon(R.drawable.ic_baseline_access_alarms_24)
                 .setContentTitle(getString(R.string.alarm))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setContentText(getString(R.string.alarm))
+                .setContentText(getString(R.string.get_up))
                 .setColor(Color.GREEN)
                 .setAutoCancel(true)
-
-//                .setContentText("$hour : $minutes")
-
-
 
         val notificationIntent = Intent(this,MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
