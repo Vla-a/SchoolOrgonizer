@@ -97,6 +97,7 @@ class AlarmClockFragment : Fragment(), KoinComponent {
             ).show()
 
         }
+
         binding!!.btnStop.setOnClickListener {
 
             Toast.makeText( context,"${getString(R.string.stop_new_alarm)}",Toast.LENGTH_SHORT).show()

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.schoolorgonizer">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,6 +17,13 @@
         tools:replace="android:allowBackup"
         tools:node="replace">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"/>
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.version"-->
+<!--            android:value="@integer/google_play_services_version" />-->
+
         <activity android:name=".MainActivity">
 
             <intent-filter>
@@ -28,9 +36,7 @@
         </activity>
 
 
-        <service android:name=".alarmсlock.AlarmService"
-       />
-
+        <service android:name=".alarmсlock.AlarmService"/>
 
     </application>
 

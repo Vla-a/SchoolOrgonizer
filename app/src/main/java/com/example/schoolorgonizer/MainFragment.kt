@@ -56,6 +56,10 @@ class MainFragment: Fragment() {
         binding!!.btnLessonSchedule.setOnClickListener {
             it.findNavController().navigate(MainFragmentDirections.toLessonFragment())
         }
+
+        binding!!.btnMap.setOnClickListener {
+            it.findNavController().navigate(MainFragmentDirections.toMapFragment())
+        }
     }
     companion object {
         const val TAG = "MainFragment"

@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+//    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -10,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "io.techmeskills.an02onl_plannerapp"
+        applicationId "com.example.schoolorgonizer"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -27,6 +28,7 @@ android {
             buildConfigField "String", "API_KEY2", '"75338e8fd7f3af6af7d6befa30af8edd"'
         }
         debug {
+            minifyEnabled false
             buildConfigField "String", "API_KEY2", '"75338e8fd7f3af6af7d6befa30af8edd"'
         }
     }
@@ -77,4 +79,6 @@ dependencies {
         // Kotlin
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    //map
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
 }
