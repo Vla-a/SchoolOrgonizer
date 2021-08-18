@@ -11,7 +11,7 @@ import java.util.*
 
 class NoteFragmentViewModel (
     private val noteRepository: NoteRepository
-) : ViewModel(), KoinComponent {
+) : ViewModel(){
 
 
     val notesListLiveData: LiveData<List<Notes>> =

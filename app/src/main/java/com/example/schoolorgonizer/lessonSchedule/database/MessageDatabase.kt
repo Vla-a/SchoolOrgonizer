@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase
 @Database(entities = [MessageEntity::class], version = 1)
 abstract class MessageDatabase : RoomDatabase() {
 
-    abstract fun MessageDao():LessonDao
+    abstract fun messageDao():LessonDao
 }
 
 object DataConstructor {

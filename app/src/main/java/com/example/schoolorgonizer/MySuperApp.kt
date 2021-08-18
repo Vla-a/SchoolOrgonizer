@@ -60,9 +60,9 @@ class MySuperApp : Application(), KoinComponent {
     }
     private val storageModule = module {
         single { DatabaseConstructor.create(get()) }  //создаем синглтон базы данных
-        factory { get<NoteDatabase>().NoteDao() } //предоставляем доступ для конкретной Dao (в нашем случае NotesDao)
+        factory { get<NoteDatabase>().noteDao() } //предоставляем доступ для конкретной Dao (в нашем случае NotesDao)
         single { DataConstructor.create(get()) }  //создаем синглтон базы данных
-        factory { get<MessageDatabase>().MessageDao() } //предоставляем доступ для конкретной Dao (в нашем случае NotesDao)
+        factory { get<MessageDatabase>().messageDao() } //предоставляем доступ для конкретной Dao (в нашем случае NotesDao)
     }
 
 }
