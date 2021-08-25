@@ -1,17 +1,10 @@
 package com.example.schoolorgonizer
 
-import android.content.Intent
-import android.net.Uri
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.bumptech.glide.Glide
-
-
-import com.example.schoolorgonizer.alarmсlock.AlarmClockFragment
-import com.example.schoolorgonizer.callSchedule.CallScheduleFragment
 import com.example.schoolorgonizer.databinding.ActivityMainBinding
-import com.example.schoolorgonizer.notes.NoteFragment
 import com.example.schoolorgonizer.weather.WeatherViewModel
 import com.example.schoolorgonizer.weather.data.WeatherResult
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -36,7 +29,6 @@ class      MainActivity : AppCompatActivity() {
         binding.lWeather.setOnClickListener{
             viewModel.getResultWeather()
         }
-
     }
 
     private fun update(resultWeather: WeatherResult) {

@@ -7,15 +7,16 @@
     android:background="@drawable/schoo">
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_call_schedule"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
         android:textColor="@color/black"
         android:text="@string/call_schedule"
         app:cornerRadius="12dp"
         app:backgroundTint="@color/white"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintBottom_toTopOf="@id/btn_lesson_schedule"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,13 +25,13 @@
         android:id="@+id/btn_lesson_schedule"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         app:cornerRadius="12dp"
         android:textColor="@color/black"
         android:text="@string/lesson_schedule"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_alarm_clock"
         app:layout_constraintTop_toBottomOf="@+id/btn_call_schedule" />
 
     <com.google.android.material.button.MaterialButton
@@ -38,37 +39,37 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
         android:text="@string/notes"
         app:cornerRadius="12dp"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_map"
         app:layout_constraintTop_toBottomOf="@+id/btn_alarm_clock" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_alarm_clock"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:textColor="@color/black"
         app:cornerRadius="12dp"
         android:text="@string/alarm_clock"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_notes"
         app:layout_constraintTop_toBottomOf="@+id/btn_lesson_schedule" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_map"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="28dp"
-        android:textColor="@color/black"
+
         android:text="@string/map"
-        app:cornerRadius="12dp"
+        android:textColor="@color/black"
         app:backgroundTint="@color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_notes" />

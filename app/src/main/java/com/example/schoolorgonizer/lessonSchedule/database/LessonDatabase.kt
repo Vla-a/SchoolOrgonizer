@@ -6,17 +6,17 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [MessageEntity::class], version = 1)
-abstract class MessageDatabase : RoomDatabase() {
+@Database(entities = [LessonEntity::class], version = 1)
+abstract class LessonDatabase : RoomDatabase() {
 
-    abstract fun messageDao():LessonDao
+    abstract fun lessonDao():LessonDao
 }
 
 object DataConstructor {
-    fun create(context: Context): MessageDatabase =
+    fun create(context: Context): LessonDatabase =
         Room.databaseBuilder(
             context,
-            MessageDatabase::class.java,
+            LessonDatabase::class.java,
             "lesson_database"
         ).build()
 }

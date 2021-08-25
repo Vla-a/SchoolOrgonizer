@@ -23,6 +23,8 @@ import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
 import com.example.schoolorgonizer.R
+import com.example.schoolorgonizer.alarmсlock.RingtonFragment.Companion.KEY1
+import com.example.schoolorgonizer.alarmсlock.RingtonFragment.Companion.TEST
 
 
 @KoinApiExtension
@@ -46,8 +48,8 @@ class AlarmClockFragment : Fragment(), KoinComponent {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setFragmentResultListener("TEST") { key, bundle ->
-            val trek = bundle.getString("KEY1")
+        setFragmentResultListener(TEST) { key, bundle ->
+            val trek = bundle.getString(KEY1)
             binding!!.tvTex.text = trek
         }
 
@@ -118,7 +120,7 @@ class AlarmClockFragment : Fragment(), KoinComponent {
     fun startAlarmService() {
 
         val myAnotherService = Intent(context, AlarmService::class.java).apply {
-            putExtra("TREK", binding?.tvTex?.text)
+            putExtra(TREK, binding?.tvTex?.text)
         }
         val pendingIntent = PendingIntent.getService(
             context?.applicationContext,
@@ -129,9 +131,12 @@ class AlarmClockFragment : Fragment(), KoinComponent {
         alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,
             alarmDate.timeInMillis,
-            10000,
+            1000,
             pendingIntent
         )
+    }
+    companion object{
+        const val TREK = "TREK"
     }
 }
 

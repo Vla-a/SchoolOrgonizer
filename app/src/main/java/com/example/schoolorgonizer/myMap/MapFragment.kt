@@ -1,19 +1,27 @@
 package com.example.schoolorgonizer.myMap
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.IntentSender
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.schoolorgonizer.databinding.FragmentMapBinding
+import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.tasks.Task
 
 
 class MapFragment : Fragment(), OnMapReadyCallback {
@@ -50,13 +58,58 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 myLocation = LatLng(p0.lastLocation.latitude, p0.lastLocation.longitude)
                 mMap.addMarker(MarkerOptions().position(myLocation!!).title("My location"))
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 16f))
-
             }
+        }
+//        if (context?.applicationContext?.let {
+//                ContextCompat.checkSelfPermission(
+//                    it,
+//                    Manifest.permission.ACCESS_COARSE_LOCATION
+//                )
+//            } != PackageManager.PERMISSION_GRANTED
+//        ) {
+//            activity?.let {
+//                ActivityCompat.requestPermissions(
+//                    it, arrayOf(
+//                        Manifest.permission.ACCESS_COARSE_LOCATION,
+//                        Manifest.permission.ACCESS_FINE_LOCATION,
+//                        Manifest.permission.ACCESS_NETWORK_STATE
+//                    ), 2
+//                )
+//            }
+//        } else {
+//            locationWizardry()
+//        }
 
-        }
         binding!!.btnMap.setOnClickListener {
-            locationWizardry()
+            if (context?.applicationContext?.let {
+                    ContextCompat.checkSelfPermission(
+                        it,
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    )
+                } != PackageManager.PERMISSION_GRANTED
+            ) {
+                activity?.let {
+                    ActivityCompat.requestPermissions(
+                        it, arrayOf(
+                            Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_NETWORK_STATE
+                        ), 2
+                    )
+                }
+            } else {
+                locationWizardry()
+            }
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        locationWizardry()
     }
 
     override fun onResume() {
@@ -82,7 +135,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     @SuppressLint("MissingPermission")
     private fun locationWizardry() {
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context)
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity)
         //Initially, get last known location. We can refine this estimate later
         fusedLocationProviderClient.lastLocation.addOnSuccessListener { location ->
             if (location != null) {
@@ -92,15 +145,31 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
         //now for receiving constant location updates:
         createLocRequest()
+        val builder = LocationSettingsRequest.Builder()
+            .addLocationRequest(locationRequest)
+
+        val client = LocationServices.getSettingsClient(activity)
+        val task: Task<LocationSettingsResponse> = client.checkLocationSettings(builder.build())
+        task.addOnFailureListener { e ->
+            if (e is ResolvableApiException) {
+                try {
+                    e.startResolutionForResult(activity, 500)
+                } catch (sendEx: IntentSender.SendIntentException) {
+                }
+            }
+        }
+
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null)
         //actually start listening for updates: See on Resume(). It's done there so that conveniently we can stop listening in onPause
     }
 
+
     private fun createLocRequest() {
         locationRequest = LocationRequest.create()
-        locationRequest.interval = 100000 //time in ms; every ~10 seconds
-        locationRequest.fastestInterval = 500
+        locationRequest.interval = 100000
+        locationRequest.fastestInterval = 10000
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
 
 }
+

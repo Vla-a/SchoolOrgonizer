@@ -67,7 +67,7 @@ class ScheduleFragment : Fragment() {
         binding!!.rvDay.addItemDecoration(horizontalDecoration)
     }
 
-    fun clickListener(lesson: Lessons) {
+    private fun clickListener(lesson: Lessons) {
         viewModels.deleteMessage(lesson)
     }
 }

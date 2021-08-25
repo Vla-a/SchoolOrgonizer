@@ -23,21 +23,22 @@
         android:layout_height="wrap_content"
         android:text="@string/lesson"
         android:layout_gravity="center"
-        android:layout_marginStart="8dp"
-        android:textSize="24dp"
+        android:layout_marginStart="6dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/purple_700"/>
     </LinearLayout>
+
     <TextView
         android:id="@+id/nv_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:text="@string/lesson1"
-        android:layout_margin="10dp"
         android:layout_gravity="center"
-        android:textSize="24dp"
-        android:textColor="@color/white"/>
+        android:layout_margin="6dp"
+        android:text="@string/lesson1"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/nv_text2"
@@ -45,9 +46,9 @@
         android:layout_height="wrap_content"
         android:text="@string/lesson2"
         android:textStyle="italic"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:layout_gravity="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="@color/white"/>
 
     <TextView
@@ -56,9 +57,9 @@
         android:layout_height="wrap_content"
         android:text="@string/lesson3"
         android:textStyle="italic"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:layout_gravity="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="@color/white"/>
 
     <TextView
@@ -67,9 +68,9 @@
         android:layout_height="wrap_content"
         android:text="@string/lesson4"
         android:textStyle="italic"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:layout_gravity="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="@color/white"/>
 
     <TextView
@@ -78,9 +79,9 @@
         android:layout_height="wrap_content"
         android:text="@string/lesson5"
         android:textStyle="italic"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:layout_gravity="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="@color/white"/>
 
     <TextView
@@ -89,9 +90,9 @@
         android:layout_height="wrap_content"
         android:text="@string/lesson6"
         android:textStyle="italic"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:layout_gravity="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="@color/white"/>
 
     <TextView
@@ -100,9 +101,9 @@
         android:layout_height="wrap_content"
         android:text="@string/lesson7"
         android:textStyle="italic"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:layout_gravity="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="@color/white"/>
 
 </LinearLayout>

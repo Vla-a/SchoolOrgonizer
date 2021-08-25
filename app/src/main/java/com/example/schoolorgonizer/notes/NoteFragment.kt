@@ -33,6 +33,7 @@ class NoteFragment : Fragment() {
         val noteAdapter = NoteAdapter {
             clickListener(it)
         }
+
         binding!!.btnReturn.setOnClickListener {
             it.findNavController().popBackStack()
         }
@@ -65,12 +66,8 @@ class NoteFragment : Fragment() {
         })
     }
 
-    fun clickListener(notes: Notes) {
+    private fun clickListener(notes: Notes) {
 
         viewModels.deleteMessage(notes)
     }
-//
-//    companion object {
-//        const val TAG = "NoteFragment"
-//    }
 }

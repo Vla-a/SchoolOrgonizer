@@ -14,9 +14,10 @@ import retrofit2.http.Query
 
 interface WeatherApi {
 
-    @GET("data/2.5/weather?appid=${BuildConfig.API_KEY2}")
+    @GET("data/2.5/weather")
     suspend fun getWeather(
         @Query("q") nameCity: String = CITY,
+        @Query("appid") key: String = BuildConfig.API_KEY2,
         @Query("lang") lang: String = LANG,
         @Query("units") units: String = UNITS,
     ): WeatherResponse

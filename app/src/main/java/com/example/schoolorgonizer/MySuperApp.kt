@@ -3,11 +3,8 @@ package com.example.schoolorgonizer
 import android.app.AlarmManager
 import android.app.Application
 import android.content.Context
+import com.example.schoolorgonizer.lessonSchedule.database.*
 import com.example.schoolorgonizer.lessonSchedule.schedule.ScheduleViewModel
-import com.example.schoolorgonizer.lessonSchedule.database.DataConstructor
-import com.example.schoolorgonizer.lessonSchedule.database.MessageDatabase
-import com.example.schoolorgonizer.lessonSchedule.database.MessageRepository
-import com.example.schoolorgonizer.lessonSchedule.daySchedule.DayScheduleRepository
 import com.example.schoolorgonizer.lessonSchedule.daySchedule.DayScheduleViewModel
 
 import com.example.schoolorgonizer.notes.NoteFragmentViewModel
@@ -48,8 +45,7 @@ class MySuperApp : Application(), KoinComponent {
     private val repository = module {
         factory { ApiRepository(get()) }
         factory { NoteRepository(get()) }
-        factory { MessageRepository(get())}
-        factory { DayScheduleRepository(get()) }
+        factory { LessonRepository(get())}
     }
 
     private val api = module {
@@ -62,7 +58,7 @@ class MySuperApp : Application(), KoinComponent {
         single { DatabaseConstructor.create(get()) }  //создаем синглтон базы данных
         factory { get<NoteDatabase>().noteDao() } //предоставляем доступ для конкретной Dao (в нашем случае NotesDao)
         single { DataConstructor.create(get()) }  //создаем синглтон базы данных
-        factory { get<MessageDatabase>().messageDao() } //предоставляем доступ для конкретной Dao (в нашем случае NotesDao)
+        factory { get<LessonDatabase>().lessonDao() } //предоставляем доступ для конкретной Dao (в нашем случае NotesDao)
     }
 
 }

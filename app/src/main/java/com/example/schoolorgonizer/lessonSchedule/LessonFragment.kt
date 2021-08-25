@@ -33,36 +33,36 @@ class LessonFragment : Fragment() {
 
         binding!!.btnMonday.setOnClickListener {
             it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
-            setFragmentResult("DAY", Bundle().apply {
-                putString("KEY2", binding!!.btnMonday.text.toString())
+            setFragmentResult(DAY, Bundle().apply {
+                putString(KEY2, binding!!.btnMonday.text.toString())
             })
         }
 
         binding!!.btnTuesday.setOnClickListener {
             it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
-            setFragmentResult("DAY", Bundle().apply {
-                putString("KEY2", binding!!.btnTuesday.text.toString())
+            setFragmentResult(DAY, Bundle().apply {
+                putString(KEY2, binding!!.btnTuesday.text.toString())
             })
         }
 
         binding!!.btnWednesday.setOnClickListener {
             it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
-            setFragmentResult("DAY", Bundle().apply {
-                putString("KEY2", binding!!.btnWednesday.text.toString())
+            setFragmentResult(DAY, Bundle().apply {
+                putString(KEY2, binding!!.btnWednesday.text.toString())
             })
         }
 
         binding!!.btnThursday.setOnClickListener {
             it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
-            setFragmentResult("DAY", Bundle().apply {
-                putString("KEY2", binding!!.btnThursday.text.toString())
+            setFragmentResult(DAY, Bundle().apply {
+                putString(KEY2, binding!!.btnThursday.text.toString())
             })
         }
 
         binding!!.btnFriday.setOnClickListener {
             it.findNavController().navigate(LessonFragmentDirections.toDayScheduleFragment())
-            setFragmentResult("DAY", Bundle().apply {
-                putString("KEY2", binding!!.btnFriday.text.toString())
+            setFragmentResult(DAY, Bundle().apply {
+                putString(KEY2, binding!!.btnFriday.text.toString())
             })
         }
 
@@ -73,5 +73,9 @@ class LessonFragment : Fragment() {
         binding!!.btnReturn.setOnClickListener {
             it.findNavController().popBackStack()
         }
+    }
+    companion object{
+        const val DAY = "DAY"
+        const val KEY2 = "KEY2"
     }
 }

@@ -4,18 +4,23 @@ import com.example.schoolorgonizer.lessonSchedule.Lessons
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class MessageRepository(
+class LessonRepository(
     private val lessonDao: LessonDao
 ) {
 
     fun getLessonList(): Flow<List<Lessons>> =
-        lessonDao.getLessonList().map { messageEntities ->
-            messageEntities.map { messageEntities ->
+        lessonDao.getLessonList().map { lessonEntities ->
+            lessonEntities.map { messageEntities ->
                 Lessons(messageEntities.name, messageEntities.date, messageEntities.id)
             }
         }
 
-    suspend fun addLesson(lesson: MessageEntity) {
+    suspend fun getDayList(date: String): List<Lessons> =
+        lessonDao.getLessonList(date).map {
+            Lessons(it.name, it.date, it.id)
+        }
+
+    suspend fun addLesson(lesson: LessonEntity) {
         lessonDao.addLesson(lesson)
 
     }
@@ -25,5 +30,5 @@ class MessageRepository(
         lessonDao.deleteLesson(lesson.entity())
     }
 
-    private fun Lessons.entity() = MessageEntity(this.name, this.date, this.id)
+    private fun Lessons.entity() = LessonEntity(this.name, this.date, this.id)
 }

@@ -14,6 +14,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.schoolorgonizer.MainActivity
 import com.example.schoolorgonizer.R
+import com.example.schoolorgonizer.alarmсlock.AlarmClockFragment.Companion.TREK
 import kotlinx.serialization.json.Json.Default.context
 
 class AlarmService : Service() {
@@ -25,7 +26,7 @@ class AlarmService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
         var generalTrek = R.raw.done
-        val  trek = intent?.getStringExtra("TREK").toString()
+        val  trek = intent?.getStringExtra(TREK).toString()
 
         when (trek) {
             TREK1 -> {
@@ -80,7 +81,7 @@ class AlarmService : Service() {
 
         notificationManager.notify(0, notificationBuilder.build())
 
-        return START_NOT_STICKY
+        return START_STICKY
     }
 
     override fun onDestroy() {

@@ -8,14 +8,14 @@ import kotlinx.coroutines.flow.Flow
 interface LessonDao {
 
     @Query("SELECT * FROM lesson_table  ORDER BY id")
-    fun getLessonList(): Flow<List<MessageEntity>>
+    fun getLessonList(): Flow<List<LessonEntity>>
 
     @Query("SELECT * FROM lesson_table WHERE date LIKE :date ORDER BY id")
-    suspend fun getLessonList(date: String): List<MessageEntity>
+    suspend fun getLessonList(date: String): List<LessonEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addLesson(message: MessageEntity)
+    suspend fun addLesson(lesson: LessonEntity)
 
     @Delete
-    suspend fun deleteLesson(message: MessageEntity)
+    suspend fun deleteLesson(lesson: LessonEntity)
 }

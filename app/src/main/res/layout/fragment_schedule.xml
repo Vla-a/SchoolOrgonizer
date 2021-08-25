@@ -33,7 +33,7 @@
         android:elevation="16dp"
         android:background="@color/gray"
         android:textAlignment="center"
-        android:backgroundTint="@color/red"
+        android:backgroundTint="@color/my_collor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -46,7 +46,7 @@
         android:background="@color/gray"
         android:entries="@array/id_items"
         android:textAlignment="center"
-        android:backgroundTint = "@color/red"
+        android:backgroundTint = "@color/my_collor"
         app:layout_constraintBottom_toTopOf="@+id/spin_lesson"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,7 +59,7 @@
         android:elevation="16dp"
         android:entries="@array/day_items"
         android:textAlignment="center"
-        android:backgroundTint="@color/red"
+        android:backgroundTint="@color/my_collor"
         app:layout_constraintBottom_toTopOf="@+id/spin_id"
         app:layout_constraintStart_toStartOf="parent" />
 

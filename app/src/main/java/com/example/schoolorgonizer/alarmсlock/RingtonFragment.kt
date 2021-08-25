@@ -54,11 +54,15 @@ class RingtonFragment : Fragment() {
                     trek = AlarmService.TREK4
                 }
             }
-            setFragmentResult("TEST", Bundle().apply {
-                putString("KEY1", trek)
+            setFragmentResult(TEST, Bundle().apply {
+                putString(KEY1, trek)
             })
 
         }
 
+    }
+    companion object{
+        const val TEST = "TEST"
+        const val KEY1 = "KEY1"
     }
 }

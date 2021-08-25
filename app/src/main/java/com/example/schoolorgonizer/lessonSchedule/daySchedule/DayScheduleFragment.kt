@@ -10,6 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.schoolorgonizer.databinding.FragmentDayScheduleBinding
+import com.example.schoolorgonizer.lessonSchedule.LessonFragment.Companion.DAY
+import com.example.schoolorgonizer.lessonSchedule.LessonFragment.Companion.KEY2
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
 
@@ -36,11 +38,10 @@ class DayScheduleFragment : Fragment(), KoinComponent {
             it.findNavController().popBackStack()
         }
 
-        setFragmentResultListener("DAY") { key, bundle ->
-            binding!!.string.text = bundle.getString("KEY2")
-            viewModels.getList( binding!!.string.text.toString())
+        setFragmentResultListener(DAY) { key, bundle ->
+            val day = bundle.getString(KEY2)
+            viewModels.getList( day.toString())
         }
-
 
         val dayAdapter = DayAdapter()
 
