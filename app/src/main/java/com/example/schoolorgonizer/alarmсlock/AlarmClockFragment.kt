@@ -11,20 +11,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.example.schoolorgonizer.databinding.FragmentAlarmClockBinding
-import org.koin.android.ext.android.inject
-import org.koin.core.component.KoinApiExtension
-import org.koin.core.component.KoinComponent
-import java.util.*
-import android.os.SystemClock
-import androidx.core.os.bundleOf
-import androidx.core.view.get
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
 import com.example.schoolorgonizer.R
 import com.example.schoolorgonizer.alarmсlock.RingtonFragment.Companion.KEY1
 import com.example.schoolorgonizer.alarmсlock.RingtonFragment.Companion.TEST
+import com.example.schoolorgonizer.databinding.FragmentAlarmClockBinding
+import org.koin.android.ext.android.inject
+import org.koin.core.component.KoinApiExtension
+import org.koin.core.component.KoinComponent
+import java.util.*
 
 
 @KoinApiExtension
@@ -49,8 +45,8 @@ class AlarmClockFragment : Fragment(), KoinComponent {
         super.onViewCreated(view, savedInstanceState)
 
         setFragmentResultListener(TEST) { key, bundle ->
-            val trek = bundle.getString(KEY1)
-            binding!!.tvTex.text = trek
+            val track = bundle.getString(KEY1)
+            binding!!.tvTex.text = track
         }
 
         binding!!.btnSingl.setOnClickListener {
@@ -120,7 +116,7 @@ class AlarmClockFragment : Fragment(), KoinComponent {
     fun startAlarmService() {
 
         val myAnotherService = Intent(context, AlarmService::class.java).apply {
-            putExtra(TREK, binding?.tvTex?.text)
+            putExtra(TRACK, binding?.tvTex?.text)
         }
         val pendingIntent = PendingIntent.getService(
             context?.applicationContext,
@@ -136,7 +132,7 @@ class AlarmClockFragment : Fragment(), KoinComponent {
         )
     }
     companion object{
-        const val TREK = "TREK"
+        const val TRACK = "TRACK"
     }
 }
 

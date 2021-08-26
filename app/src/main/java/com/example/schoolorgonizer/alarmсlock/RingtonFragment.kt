@@ -1,16 +1,13 @@
 package com.example.schoolorgonizer.alarmсlock
 
-import android.R.attr
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.findNavController
 import com.example.schoolorgonizer.databinding.FragmentRingtonBinding
-import java.util.*
-import android.R.attr.defaultValue
-import androidx.fragment.app.setFragmentResult
 import org.koin.core.component.KoinApiExtension
 
 
@@ -38,24 +35,24 @@ class RingtonFragment : Fragment() {
         binding!!.mainSubmit.setOnClickListener {
             it.findNavController().popBackStack()
 
-            var trek = ""
+            var track = ""
             when {
 
                 binding!!.trek1.isChecked -> {
-                    trek = AlarmService.TREK1
+                    track = AlarmService.TRACK1
                 }
                 binding!!.trek2.isChecked -> {
-                    trek = AlarmService.TREK2
+                    track = AlarmService.TRACK2
                 }
                 binding!!.trek3.isChecked -> {
-                    trek = AlarmService.TREK3
+                    track = AlarmService.TRACK3
                 }
                 binding!!.trek4.isChecked -> {
-                    trek = AlarmService.TREK4
+                    track = AlarmService.TRACK4
                 }
             }
             setFragmentResult(TEST, Bundle().apply {
-                putString(KEY1, trek)
+                putString(KEY1, track)
             })
 
         }

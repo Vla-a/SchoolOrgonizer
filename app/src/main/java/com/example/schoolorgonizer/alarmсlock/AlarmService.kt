@@ -10,12 +10,10 @@ import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Build
 import android.os.IBinder
-import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.schoolorgonizer.MainActivity
 import com.example.schoolorgonizer.R
-import com.example.schoolorgonizer.alarmсlock.AlarmClockFragment.Companion.TREK
-import kotlinx.serialization.json.Json.Default.context
+import com.example.schoolorgonizer.alarmсlock.AlarmClockFragment.Companion.TRACK
 
 class AlarmService : Service() {
 
@@ -26,19 +24,19 @@ class AlarmService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
         var generalTrek = R.raw.done
-        val  trek = intent?.getStringExtra(TREK).toString()
+        val  trek = intent?.getStringExtra(TRACK).toString()
 
         when (trek) {
-            TREK1 -> {
+            TRACK1 -> {
                 generalTrek = R.raw.carlson
             }
-            TREK2 -> {
+            TRACK2 -> {
                 generalTrek = R.raw.trek
             }
-            TREK3 -> {
+            TRACK3 -> {
                 generalTrek = R.raw.callsound
             }
-            TREK4 -> {
+            TRACK4 -> {
                 generalTrek = R.raw.done
             }
         }
@@ -92,10 +90,10 @@ class AlarmService : Service() {
     companion object {
         const val CHANNEL_ID = "CHANNEL_ID"
         const val NOTIFICATION_CHANNEL = "NOTIFICATION_CHANNEL"
-        const val TREK1 = "trek1"
-        const val TREK2 = "trek2"
-        const val TREK3 = "trek3"
-        const val TREK4 = "trek4"
+        const val TRACK1 = "track1"
+        const val TRACK2 = "track2"
+        const val TRACK3 = "track3"
+        const val TRACK4 = "track4"
     }
 
 }
