@@ -1,6 +1,5 @@
 package com.example.schoolorgonizer
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +8,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.schoolorgonizer.databinding.ActivityMainBinding.inflate
 import com.example.schoolorgonizer.databinding.FragmentMainBinding
-
-import java.util.*
 
 class MainFragment: Fragment() {
 

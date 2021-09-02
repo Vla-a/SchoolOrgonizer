@@ -2,7 +2,6 @@ package com.example.schoolorgonizer.myMap
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -60,25 +59,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 16f))
             }
         }
-//        if (context?.applicationContext?.let {
-//                ContextCompat.checkSelfPermission(
-//                    it,
-//                    Manifest.permission.ACCESS_COARSE_LOCATION
-//                )
-//            } != PackageManager.PERMISSION_GRANTED
-//        ) {
-//            activity?.let {
-//                ActivityCompat.requestPermissions(
-//                    it, arrayOf(
-//                        Manifest.permission.ACCESS_COARSE_LOCATION,
-//                        Manifest.permission.ACCESS_FINE_LOCATION,
-//                        Manifest.permission.ACCESS_NETWORK_STATE
-//                    ), 2
-//                )
-//            }
-//        } else {
-//            locationWizardry()
-//        }
 
         binding!!.btnMap.setOnClickListener {
             if (context?.applicationContext?.let {

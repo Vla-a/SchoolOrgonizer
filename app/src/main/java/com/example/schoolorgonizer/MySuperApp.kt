@@ -6,7 +6,6 @@ import android.content.Context
 import com.example.schoolorgonizer.lessonSchedule.database.*
 import com.example.schoolorgonizer.lessonSchedule.schedule.ScheduleViewModel
 import com.example.schoolorgonizer.lessonSchedule.daySchedule.DayScheduleViewModel
-
 import com.example.schoolorgonizer.notes.NoteFragmentViewModel
 import com.example.schoolorgonizer.notes.database.DatabaseConstructor
 import com.example.schoolorgonizer.notes.database.NoteDatabase
