@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+
         android:name=".MySuperApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -37,8 +38,13 @@
             </intent-filter>
         </activity>
 
-
+        <receiver
+            android:name=".notes.notification.NotificationReceiver"
+            android:enabled="true"
+            android:exported="true" />
         <service android:name=".alarmсlock.AlarmService"/>
+        <service android:name=".notes.notification.NoteService"/>
+
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 

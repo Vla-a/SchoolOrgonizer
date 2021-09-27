@@ -14,4 +14,21 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/windoy_bakgraund</item>
     </style>
+
+    <style name="ButtonTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:background">@color/red</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="myTheme" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+        // The rest of your customization.
+
+    </style>
 </resources>

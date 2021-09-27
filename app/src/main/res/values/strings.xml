@@ -65,6 +65,11 @@
     <string name="type_week"> Input Week</string>
     <string name="add"> Add</string>
     <string name="back">Back</string>
+    <string name="notify">notify</string>
+    <string name="enter_your_note">enter_your_note</string>
+    <string name="confirm">Сохранить</string>
+    <string name="Creating_a_note">Создание заметки</string>
+
 
     <string-array name="spinner_items">
         <item> Нет урока </item>

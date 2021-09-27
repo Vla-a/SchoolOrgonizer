@@ -116,6 +116,20 @@
         android:name="com.example.schoolorgonizer.notes.NoteFragment"
         android:label="NoteFragment"
         tools:layout="@layout/fragment_note">
+        <action
+            android:id="@+id/toAddNoteFragment"
+            app:destination="@+id/addNoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.example.schoolorgonizer.notes.AddNoteFragment"
+        android:label="AddNoteFragment"
+        tools:layout="@layout/fragment_add_note">
     </fragment>
 
     <fragment

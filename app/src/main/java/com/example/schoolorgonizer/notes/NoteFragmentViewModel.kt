@@ -11,19 +11,19 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class NoteFragmentViewModel (
+class NoteFragmentViewModel(
     private val noteRepository: NoteRepository
-) : ViewModel(){
+) : ViewModel() {
 
 
     val notesListLiveData: LiveData<List<Notes>> =
         noteRepository.getMessagesList().asLiveData()
 
-    fun addMessageToDatabase(message: String) {
+    fun addMessageToDatabase(message: String, date: String) {
 
         val newMessage = NoteEntity(
-            message,
-            SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.ROOT).format(System.currentTimeMillis())
+            message, date
+//            SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.ROOT).format(System.currentTimeMillis())
         )
 
         viewModelScope.launch(Dispatchers.IO) {

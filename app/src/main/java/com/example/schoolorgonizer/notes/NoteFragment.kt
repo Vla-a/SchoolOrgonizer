@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.schoolorgonizer.alarmсlock.AlarmClockFragmentDirections
+import com.example.schoolorgonizer.alarmсlock.RingtonFragment
 import com.example.schoolorgonizer.databinding.FragmentNoteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,9 +42,10 @@ class NoteFragment : Fragment() {
         }
 
         binding!!.btnGreta.setOnClickListener {
-            binding!!.editTextNote.visibility = View.VISIBLE
-            binding!!.btnNote.visibility = View.VISIBLE
-            binding!!.btnGreta.visibility = View.INVISIBLE
+//            binding!!.editTextNote.visibility = View.VISIBLE
+//            binding!!.btnNote.visibility = View.VISIBLE
+//            binding!!.btnGreta.visibility = View.INVISIBLE
+            it.findNavController().navigate(NoteFragmentDirections.toAddNoteFragment())
         }
 
         binding?.btnNote?.setOnClickListener {
@@ -50,11 +54,16 @@ class NoteFragment : Fragment() {
             binding!!.editTextNote.visibility = View.INVISIBLE
             binding!!.btnNote.visibility = View.INVISIBLE
 
-            with(binding!!.editTextNote) {
-                viewModels.addMessageToDatabase(text.toString())
-                setText("")
-
-            }
+//            with(binding!!.editTextNote) {
+//                viewModels.addMessageToDatabase(text.toString(),)
+//                setText("")
+//
+//            }
+        }
+        setFragmentResultListener("TEST1") { _, bundle ->
+            val track = bundle.getString("KEY5")
+            val date = bundle.getString("KEY6")
+            viewModels.addMessageToDatabase(track.toString(),date.toString())
         }
 
         binding?.rvNote?.layoutManager =
