@@ -10,8 +10,6 @@ import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.schoolorgonizer.alarmсlock.AlarmClockFragmentDirections
-import com.example.schoolorgonizer.alarmсlock.RingtonFragment
 import com.example.schoolorgonizer.databinding.FragmentNoteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,6 +37,7 @@ class NoteFragment : Fragment() {
 
         binding!!.btnReturn.setOnClickListener {
             it.findNavController().popBackStack()
+
         }
 
         binding!!.btnGreta.setOnClickListener {
@@ -63,7 +62,7 @@ class NoteFragment : Fragment() {
         setFragmentResultListener("TEST1") { _, bundle ->
             val track = bundle.getString("KEY5")
             val date = bundle.getString("KEY6")
-            viewModels.addMessageToDatabase(track.toString(),date.toString())
+            viewModels.addMessageToDatabase( track.toString(),date.toString())
         }
 
         binding?.rvNote?.layoutManager =
@@ -73,6 +72,9 @@ class NoteFragment : Fragment() {
         viewModels.notesListLiveData.observe(this.viewLifecycleOwner, Observer {
             noteAdapter.submitList(it)
         })
+
+
+
     }
 
     private fun clickListener(notes: Notes) {

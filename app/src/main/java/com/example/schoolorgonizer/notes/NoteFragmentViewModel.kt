@@ -1,15 +1,15 @@
 package com.example.schoolorgonizer.notes
 
+import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.test.core.app.ActivityScenario.launch
 import com.example.schoolorgonizer.notes.database.NoteEntity
 import com.example.schoolorgonizer.notes.database.NoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.*
 
 class NoteFragmentViewModel(
     private val noteRepository: NoteRepository
@@ -31,11 +31,12 @@ class NoteFragmentViewModel(
         }
     }
 
+
     fun deleteMessage(notes: Notes) {
         viewModelScope.launch(Dispatchers.IO) {
             noteRepository.deleteMessage(notes)
         }
     }
-}
 
+}
 

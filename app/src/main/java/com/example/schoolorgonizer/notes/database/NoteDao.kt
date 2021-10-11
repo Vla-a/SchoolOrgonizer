@@ -11,7 +11,7 @@ interface NoteDao {
     fun getMessageList(): Flow<List<NoteEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addMessage(note: NoteEntity)
+    fun addMessage(note: NoteEntity)
 
     @Delete
     suspend fun deleteMessage(note: NoteEntity)

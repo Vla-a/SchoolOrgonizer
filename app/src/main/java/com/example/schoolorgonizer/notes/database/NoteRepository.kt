@@ -1,8 +1,10 @@
 package com.example.schoolorgonizer.notes.database
 
 import com.example.schoolorgonizer.notes.Notes
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 
 class NoteRepository(
     private val noteDao: NoteDao
@@ -11,13 +13,13 @@ class NoteRepository(
     fun getMessagesList(): Flow<List<Notes>> =
         noteDao.getMessageList().map { messageEntities ->
             messageEntities.map { noteEntities ->
-                Notes(noteEntities.message, noteEntities.date)
+                Notes(  noteEntities.message, noteEntities.date)
             }
         }
 
-    suspend fun addMessages(note: NoteEntity) {
-        noteDao.addMessage(note)
+     fun addMessages(note: NoteEntity) {
 
+        noteDao.addMessage(note)
     }
 
     suspend fun deleteMessage(notes: Notes) {
@@ -25,5 +27,12 @@ class NoteRepository(
         noteDao.deleteMessage(notes.entity())
     }
 
-    private fun Notes.entity() = NoteEntity(this.message, this.date)
+//    suspend fun deleteMessag(noteId: Long) {
+//        withContext(Dispatchers.IO) {
+//            noteDao.getNoteById(noteId)?.let {
+//                noteDao.deleteMessage(it)
+//            }
+//        }
+//    }
+   private fun Notes.entity() = NoteEntity( this.message, this.date)
 }

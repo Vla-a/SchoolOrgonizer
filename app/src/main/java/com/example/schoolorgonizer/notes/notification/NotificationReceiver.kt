@@ -32,10 +32,8 @@ class NotificationReceiver : BroadcastReceiver() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 createChannel(notificationManager)
             }
-
-            val noteId = intent.getLongExtra(NOTIFICATION_KEY_NOTE_ID, -1)
             val noteText = intent.getStringExtra(NOTIFICATION_KEY_NOTE_TEXT)
-            val noteOwner = intent.getStringExtra(NOTIFICATION_KEY_NOTE_OWNER)
+            val noteDate = intent.getStringExtra(NOTIFICATION_KEY_NOTE_OWNER)
 
             val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL)
                 .setSmallIcon(R.mipmap.ic_launcher_round)
@@ -43,9 +41,12 @@ class NotificationReceiver : BroadcastReceiver() {
                 .setContentText(noteText)
                 .setContentIntent(contentIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .addAction(makeDeleteAction(context, noteId))
-                .addAction(makePostponeAction(context, noteId))
-                .setAutoCancel(true)
+                .addAction(noteText?.let { noteDate?.let { it1 ->
+                    makeDeleteAction(context, it,
+                        it1
+                    )
+                } })
+                      .setAutoCancel(true)
             notificationManager.notify(0, builder.build())
 
         } catch (e: Exception) {
@@ -55,11 +56,12 @@ class NotificationReceiver : BroadcastReceiver() {
         }
     }
 
-    private fun makeDeleteAction(context: Context, noteId: Long): NotificationCompat.Action {
+    private fun makeDeleteAction(context: Context, noteText: String,noteDate:String ): NotificationCompat.Action {
         val deleteIntent =
             Intent(context.applicationContext, NoteService::class.java)
         deleteIntent.action = ACTION_DELETE
-        deleteIntent.putExtra(NOTIFICATION_KEY_NOTE_ID, noteId)
+        deleteIntent.putExtra(NOTIFICATION_KEY_NOTE_TEXT, noteText)
+        deleteIntent.putExtra(NOTIFICATION_KEY_NOTE_OWNER, noteDate)
         val deletePendingIntent = PendingIntent.getService(
             context.applicationContext,
             1111,
@@ -74,24 +76,24 @@ class NotificationReceiver : BroadcastReceiver() {
         ).build()
     }
 
-    private fun makePostponeAction(context: Context, noteId: Long): NotificationCompat.Action {
-        val postponeIntent =
-            Intent(context.applicationContext, NoteService::class.java)
-        postponeIntent.action = ACTION_POSTPONE
-        postponeIntent.putExtra(NOTIFICATION_KEY_NOTE_ID, noteId)
-        val postponePendingIntent = PendingIntent.getService(
-            context.applicationContext,
-            1112,
-            postponeIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT
-        )
-
-        return NotificationCompat.Action.Builder(
-            R.drawable.ic_baseline_add_24,
-            "Postpone",
-            postponePendingIntent
-        ).build()
-    }
+//    private fun makePostponeAction(context: Context, noteId: Long): NotificationCompat.Action {
+//        val postponeIntent =
+//            Intent(context.applicationContext, NoteService::class.java)
+//        postponeIntent.action = ACTION_POSTPONE
+//        postponeIntent.putExtra(NOTIFICATION_KEY_NOTE_ID, noteId)
+//        val postponePendingIntent = PendingIntent.getService(
+//            context.applicationContext,
+//            1112,
+//            postponeIntent,
+//            PendingIntent.FLAG_UPDATE_CURRENT
+//        )
+//
+//        return NotificationCompat.Action.Builder(
+//            R.drawable.ic_baseline_add_24,
+//            "Postpone",
+//            postponePendingIntent
+//        ).build()
+//    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createChannel(notificationManager: NotificationManager) {

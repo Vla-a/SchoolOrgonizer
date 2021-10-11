@@ -63,9 +63,9 @@ class AddNoteFragment : Fragment() {
                         "Дата: ${binding!!.calendarView.dayOfMonth}.${binding!!.calendarView.month}.${binding!!.calendarView.year}" +
                                 "  ${binding!!.timePicker.hour}:${binding!!.timePicker.minute}"
                     putString("KEY5", note.toString())
-                    putString("KEY6", dat.toString())
+                    putString("KEY6", dat)
                     if (binding!!.alarmSwitch.isChecked) {
-                        startAlarmService(note.toString())
+                        startAlarmService(note.toString(), dat)
                     }
 
                 })
@@ -77,11 +77,11 @@ class AddNoteFragment : Fragment() {
         }
     }
 
-    fun startAlarmService(note: String) {
+    fun startAlarmService(note: String, date: String) {
 
         val notifuBpouk = Intent(context, NotificationReceiver::class.java).apply {
             putExtra(NotificationReceiver.NOTIFICATION_KEY_NOTE_TEXT, note)
-
+            putExtra(NotificationReceiver.NOTIFICATION_KEY_NOTE_OWNER, date)
         }
         val pendingIntent1 = PendingIntent.getBroadcast(
             context?.applicationContext,

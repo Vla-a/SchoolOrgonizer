@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "massage_table")
 class NoteEntity(
+
      @PrimaryKey val message: String,
      val date: String
 )
