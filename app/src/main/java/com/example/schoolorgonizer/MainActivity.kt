@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding.lWeather.setOnClickListener {
             viewModel.getResultWeather()
         }
+
     }
 
     private fun update(resultWeather: WeatherResult) {

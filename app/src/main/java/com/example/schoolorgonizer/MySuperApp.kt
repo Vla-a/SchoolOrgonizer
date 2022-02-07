@@ -10,6 +10,7 @@ import com.example.schoolorgonizer.notes.NoteFragmentViewModel
 import com.example.schoolorgonizer.notes.database.DatabaseConstructor
 import com.example.schoolorgonizer.notes.database.NoteDatabase
 import com.example.schoolorgonizer.notes.database.NoteRepository
+import com.example.schoolorgonizer.notes.notification.NotificationRepository
 import com.example.schoolorgonizer.weather.WeatherViewModel
 import com.example.schoolorgonizer.weather.restApi.ApiRepository
 import com.example.schoolorgonizer.weather.restApi.WeatherApi
@@ -43,8 +44,9 @@ class MySuperApp : Application(), KoinComponent {
 
     private val repository = module {
         factory { ApiRepository(get()) }
-        factory { NoteRepository(get()) }
+        factory { NoteRepository(get(), get()) }
         factory { LessonRepository(get())}
+        factory { NotificationRepository(get(), get()) }
     }
 
     private val api = module {

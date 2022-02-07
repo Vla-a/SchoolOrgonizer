@@ -34,7 +34,6 @@ class NoteAdapter(
 
             bindingView.ivRemove.setOnClickListener {
                 clickListener(item)
-                true
             }
         }
     }

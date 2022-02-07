@@ -41,10 +41,13 @@ class NoteService : Service(), KoinComponent {
 
                         note?.let { it1 -> notesRepository.deleteMessage(it1) }
                     }
-                    notificationManager.cancel(0)
+                   notificationManager.cancel(0)
                 }
+
                 NotificationReceiver.ACTION_POSTPONE -> {
                     GlobalScope.launch {
+
+                        note?.let { it1 -> notesRepository.postponeNoteById(it1) }
 
                     }
                     notificationManager.cancel(0)
@@ -52,7 +55,7 @@ class NoteService : Service(), KoinComponent {
                 else -> Unit
             }
         }
-        stopSelf()
+
         return START_NOT_STICKY
     }
 

@@ -46,6 +46,11 @@ class NotificationReceiver : BroadcastReceiver() {
                         it1
                     )
                 } })
+                .addAction(noteText?.let { noteDate?.let { it1 ->
+                    makePostponeAction(context, it,
+                        it1
+                    )
+                } })
                       .setAutoCancel(true)
             notificationManager.notify(0, builder.build())
 
@@ -76,24 +81,25 @@ class NotificationReceiver : BroadcastReceiver() {
         ).build()
     }
 
-//    private fun makePostponeAction(context: Context, noteId: Long): NotificationCompat.Action {
-//        val postponeIntent =
-//            Intent(context.applicationContext, NoteService::class.java)
-//        postponeIntent.action = ACTION_POSTPONE
-//        postponeIntent.putExtra(NOTIFICATION_KEY_NOTE_ID, noteId)
-//        val postponePendingIntent = PendingIntent.getService(
-//            context.applicationContext,
-//            1112,
-//            postponeIntent,
-//            PendingIntent.FLAG_UPDATE_CURRENT
-//        )
-//
-//        return NotificationCompat.Action.Builder(
-//            R.drawable.ic_baseline_add_24,
-//            "Postpone",
-//            postponePendingIntent
-//        ).build()
-//    }
+    private fun makePostponeAction(context: Context, noteText: String,noteDate:String): NotificationCompat.Action {
+        val postponeIntent =
+            Intent(context.applicationContext, NoteService::class.java)
+        postponeIntent.action = ACTION_POSTPONE
+        postponeIntent.putExtra(NOTIFICATION_KEY_NOTE_TEXT, noteText)
+        postponeIntent.putExtra(NOTIFICATION_KEY_NOTE_OWNER, noteDate)
+        val postponePendingIntent = PendingIntent.getService(
+            context.applicationContext,
+            1112,
+            postponeIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        return NotificationCompat.Action.Builder(
+            R.drawable.ic_baseline_add_24,
+            "Postpone",
+            postponePendingIntent
+        ).build()
+    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createChannel(notificationManager: NotificationManager) {
